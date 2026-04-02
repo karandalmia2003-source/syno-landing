@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Syno — Less chaos. More clarity.</title>
+<meta name="description" content="Syno helps you stay on top of everything — tasks, reminders, notes, and your schedule — without the overwhelm."/>
+<meta property="og:title" content="Syno — Less chaos. More clarity."/>
+<meta property="og:description" content="Say what's on your mind. Syno takes care of the rest — tasks, reminders, notes, your day — all in one place."/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="https://syno.ai/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Syno AI — Your life, automatically organized."/>
+<meta name="twitter:description" content="Speak once. Syno handles everything. Tasks, reminders, memory, and schedule — created instantly from your voice."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error-container": "#ffb2b9",
+              "secondary-dim": "#818cf8",
+              "inverse-primary": "#842cd3",
+              "on-secondary": "#001e4a",
+              "surface-dim": "#0e0e0e",
+              "surface-container-highest": "#262626",
+              "primary-fixed": "#c284ff",
+              "on-primary-container": "#360061",
+              "on-error": "#490013",
+              "secondary-container": "#005ac2",
+              "inverse-surface": "#fcf8f8",
+              "on-surface-variant": "#adaaaa",
+              "surface": "#0c0b0b",
+              "on-secondary-container": "#f7f7ff",
+              "secondary-fixed-dim": "#a9c4ff",
+              "primary": "#a78bfa",
+              "on-primary-fixed-variant": "#430076",
+              "tertiary-container": "#f8a010",
+              "surface-container": "#1a1919",
+              "error-container": "#a70138",
+              "surface-container-lowest": "#000000",
+              "tertiary-dim": "#e79400",
+              "secondary-fixed": "#bfd1ff",
+              "on-primary": "#47007c",
+              "on-background": "#ffffff",
+              "outline-variant": "#494847",
+              "on-surface": "#ffffff",
+              "on-tertiary": "#573500",
+              "primary-fixed-dim": "#b971ff",
+              "primary-container": "#c284ff",
+              "inverse-on-surface": "#565554",
+              "tertiary-fixed-dim": "#e79400",
+              "on-tertiary-container": "#4a2c00",
+              "tertiary": "#ffb148",
+              "on-primary-fixed": "#000000",
+              "primary-dim": "#9c48ea",
+              "error": "#ff6e84",
+              "surface-variant": "#262626",
+              "surface-container-high": "#201f1f",
+              "secondary": "#699cff",
+              "on-tertiary-fixed": "#2a1700",
+              "tertiary-fixed": "#f8a010",
+              "on-secondary-fixed-variant": "#004da8",
+              "surface-tint": "#cc97ff",
+              "surface-bright": "#2c2c2c",
+              "on-tertiary-fixed-variant": "#563400",
+              "on-secondary-fixed": "#003271",
+              "error-dim": "#d73357",
+              "background": "#0e0e0e",
+              "surface-container-low": "#131313",
+              "outline": "#777575"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            animation: {
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'fade-up': 'fadeUp 0.8s ease-out forwards',
+              'type': 'type 2s steps(40, end)',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translate(var(--tw-translate-x,0), 0px)' },
+                '50%': { transform: 'translate(var(--tw-translate-x,0), -20px)' },
+              },
+              fadeUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              type: {
+                from: { width: '0' },
+                to: { width: '100%' }
+              }
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(38, 38, 38, 0.4);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .neon-glow-purple {
+            box-shadow: none;
+        }
+        .neon-glow-blue {
+            box-shadow: none;
+        }
+        .text-gradient-primary {
+            background: linear-gradient(135deg, #cc97ff 0%, #699cff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+        body {
+            background-color: #0e0e0e;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .modal-enter {
+            animation: modalFadeIn 0.3s ease-out forwards;
+        }
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.95) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .waveform-bar {
+            animation: soundWave 1.2s ease-in-out infinite;
+        }
+        @keyframes soundWave {
+            0%, 100% { height: 4px; }
+            50% { height: 24px; }
+        }
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .active-modal {
+            overflow: hidden;
+        }
+        @keyframes orbPulse {
+            0%, 100% { box-shadow: 0 0 40px rgba(204,151,255,0.35), 0 0 80px rgba(204,151,255,0.1); }
+            50% { box-shadow: 0 0 70px rgba(204,151,255,0.65), 0 0 140px rgba(105,156,255,0.2); }
+        }
+        @keyframes dashFlow {
+            to { stroke-dashoffset: -12; }
+        }
+        .orb-pulse { animation: orbPulse 3s ease-in-out infinite; }
+        .dash-flow { animation: dashFlow 2s linear infinite; }
+        .sim-card {
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        @media (max-width: 768px) {
+          #radial-container {
+            min-height: 340px;
+            overflow: hidden;
+          }
+          .radial-scene {
+            position: absolute;
+            width: 1024px;
+            height: 900px;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%) scale(0.36);
+            transform-origin: top center;
+          }
+        }
+        .sim-card:hover {
+            transform: translateY(-6px) !important;
+            border-color: rgba(204,151,255,0.4);
+            box-shadow: 0 8px 32px rgba(204,151,255,0.15);
+        }
+
+        /* ── Start Anywhere Section ── */
+        @keyframes saSlideUp {
+            from { opacity: 0; transform: translateY(28px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes saPopIn {
+            0%   { opacity: 0; transform: translateY(12px) scale(0.96); }
+            60%  { transform: translateY(-3px) scale(1.01); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .sa-step {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .sa-step.sa-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .sa-arrow {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .sa-arrow.sa-visible { opacity: 1; }
+        .sa-output-card {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.45s ease, transform 0.45s ease;
+        }
+        .sa-output-card.sa-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* pulse ring on the mic button */
+        @keyframes ringPulse {
+            0%   { box-shadow: 0 0 0 0 rgba(204,151,255,0.5); }
+            70%  { box-shadow: 0 0 0 8px rgba(204,151,255,0); }
+            100% { box-shadow: 0 0 0 0 rgba(204,151,255,0); }
+        }
+        .mic-ring { animation: ringPulse 2s ease-out infinite; }
+        /* connector line glow */
+        .sa-connector {
+            position: relative;
+            overflow: hidden;
+        }
+        .sa-connector::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(204,151,255,0.7), transparent);
+            animation: connectorShimmer 2.5s ease-in-out infinite;
+        }
+        @keyframes connectorShimmer {
+            0%   { left: -60%; }
+            100% { left: 160%; }
+        }
+    </style>
+</head>
+<body class="selection:bg-primary/30 selection:text-primary overflow-x-hidden">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-[100] bg-neutral-900/40 backdrop-blur-xl border-b border-white/5">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-white font-headline">Syno AI</div>
+<div class="hidden md:flex items-center gap-8 font-headline tracking-tight text-sm text-on-surface-variant">
+  <a href="#hero" class="hover:text-white transition-colors">Home</a>
+  <a href="#timeline" class="hover:text-white transition-colors">How it works</a>
+  <a href="#start-anywhere" class="hover:text-white transition-colors">Get started</a>
+  <a href="#features" class="hover:text-white transition-colors">Features</a>
+</div>
+<button class="bg-white text-black font-bold px-6 py-2.5 rounded-full hover:bg-white/90 duration-200 ease-out transition-all" onclick="openModal('earlyAccessModal')">
+                Get early access
+            </button>
+</div>
+</nav>
+<main class="relative pt-24 overflow-hidden">
+<!-- Hero Section -->
+<section id="hero" class="relative max-w-7xl mx-auto px-8 mb-16 text-center" style="opacity:1">
+<div class="relative z-10 flex flex-col items-center">
+<span class="font-label text-on-surface-variant text-xs tracking-[0.15em] uppercase mb-6 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full animate-fade-up">Public launch coming soon</span>
+<h1 class="font-headline text-4xl md:text-8xl font-bold tracking-tighter leading-[0.95] mb-8 max-w-4xl text-white animate-fade-up" style="animation-delay: 0.1s">
+                    Your life, <span class="text-gradient-primary">automatically</span> organized.
+                </h1>
+<p class="font-body text-on-surface-variant text-base md:text-2xl max-w-2xl mb-12 leading-relaxed animate-fade-up" style="animation-delay: 0.2s">
+                    Just speak. Syno listens, understands, and plans your day. The first app designed for the era of thought.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 mb-10 animate-fade-up" style="animation-delay: 0.3s">
+<button class="bg-white text-black font-bold px-8 py-4 rounded-full text-lg hover:bg-white/90 transition-colors" onclick="openModal('earlyAccessModal')">
+                        Get early access
+                    </button>
+</div>
+<!-- Hero Radial Labels -->
+<p class="text-center text-white/60 text-lg font-body mt-4 mb-1">Just say it. Done.</p>
+<!-- Hero Radial Visual -->
+<div id="radial-container" class="relative w-full max-w-5xl min-h-[420px] md:min-h-[900px] mx-auto mt-8 flex items-center justify-center overflow-hidden">
+<div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-surface to-transparent z-10"></div>
+<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/8 blur-[100px] rounded-full pointer-events-none"></div>
+
+<div class="radial-scene">
+<!-- SVG connection lines — viewBox 1000×900, orb center at (500,450) -->
+<!-- endpoints = center of each card based on CSS position + ~45px half card-height -->
+<svg class="radial-svg absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 900" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="hl1" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="500" y2="72"><stop offset="0%" stop-color="#cc97ff" stop-opacity="0.8"/><stop offset="100%" stop-color="#cc97ff" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="hl2" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="856" y2="198"><stop offset="0%" stop-color="#699cff" stop-opacity="0.8"/><stop offset="100%" stop-color="#699cff" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="hl3" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="876" y2="450"><stop offset="0%" stop-color="#cc97ff" stop-opacity="0.8"/><stop offset="100%" stop-color="#cc97ff" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="hl4" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="856" y2="702"><stop offset="0%" stop-color="#699cff" stop-opacity="0.8"/><stop offset="100%" stop-color="#699cff" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="hl5" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="500" y2="820"><stop offset="0%" stop-color="#cc97ff" stop-opacity="0.8"/><stop offset="100%" stop-color="#cc97ff" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="hl6" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="144" y2="702"><stop offset="0%" stop-color="#699cff" stop-opacity="0.8"/><stop offset="100%" stop-color="#699cff" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="hl7" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="124" y2="450"><stop offset="0%" stop-color="#cc97ff" stop-opacity="0.8"/><stop offset="100%" stop-color="#cc97ff" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="hl8" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="144" y2="198"><stop offset="0%" stop-color="#699cff" stop-opacity="0.8"/><stop offset="100%" stop-color="#699cff" stop-opacity="0.2"/></linearGradient>
+  </defs>
+  <line x1="500" y1="450" x2="500" y2="72"  stroke="url(#hl1)" stroke-width="1.5" stroke-dasharray="5 6" class="dash-flow"/>
+  <line x1="500" y1="450" x2="856" y2="198" stroke="url(#hl2)" stroke-width="1.5" stroke-dasharray="5 6" class="dash-flow" style="animation-delay:0.3s"/>
+  <line x1="500" y1="450" x2="876" y2="450" stroke="url(#hl3)" stroke-width="1.5" stroke-dasharray="5 6" class="dash-flow" style="animation-delay:0.6s"/>
+  <line x1="500" y1="450" x2="856" y2="702" stroke="url(#hl4)" stroke-width="1.5" stroke-dasharray="5 6" class="dash-flow" style="animation-delay:0.9s"/>
+  <line x1="500" y1="450" x2="500" y2="820" stroke="url(#hl5)" stroke-width="1.5" stroke-dasharray="5 6" class="dash-flow" style="animation-delay:1.2s"/>
+  <line x1="500" y1="450" x2="144" y2="702" stroke="url(#hl6)" stroke-width="1.5" stroke-dasharray="5 6" class="dash-flow" style="animation-delay:1.5s"/>
+  <line x1="500" y1="450" x2="124" y2="450" stroke="url(#hl7)" stroke-width="1.5" stroke-dasharray="5 6" class="dash-flow" style="animation-delay:1.8s"/>
+  <line x1="500" y1="450" x2="144" y2="198" stroke="url(#hl8)" stroke-width="1.5" stroke-dasharray="5 6" class="dash-flow" style="animation-delay:2.1s"/>
+</svg>
+
+<!-- Central Orb -->
+<div id="radial-orb" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-36 h-36 rounded-full bg-gradient-to-br from-primary to-secondary p-[2px] orb-pulse cursor-pointer hover:scale-110 transition-transform" onclick="openModal('thoughtModal')">
+<div class="w-full h-full bg-surface-container-lowest rounded-full flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-40 mix-blend-screen bg-gradient-to-tr from-primary via-secondary to-tertiary"></div>
+<div class="flex items-center justify-center gap-[3px] h-8">
+  <div class="waveform-bar w-1 rounded-full bg-white" style="height:30%;animation-delay:0.0s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-white" style="height:60%;animation-delay:0.2s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-white" style="height:90%;animation-delay:0.4s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-white" style="height:100%;animation-delay:0.6s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-white" style="height:90%;animation-delay:0.4s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-white" style="height:60%;animation-delay:0.2s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-white" style="height:30%;animation-delay:0.0s"></div>
+</div>
+</div>
+</div>
+<!-- TOP CENTER — Calendar -->
+<div class="sim-card sim-card-center absolute top-[3%] left-1/2 -translate-x-1/2 glass-card p-4 rounded-xl border border-white/10 w-52 z-20 animate-float" style="animation-delay:0s" onclick="openModal('calendarModal')">
+  <div class="flex items-center gap-3 mb-2"><span class="material-symbols-outlined text-secondary text-sm">event</span><span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Calendar Block</span></div>
+  <p class="font-headline text-sm font-medium">Marketing Strategy</p>
+  <p class="font-body text-xs text-on-surface-variant">2:00 PM — 3:30 PM</p>
+</div>
+<!-- TOP-RIGHT — Task -->
+<div class="sim-card sim-card-side absolute top-[17%] right-[4%] glass-card p-4 rounded-xl border border-white/10 w-52 z-20 animate-float" style="animation-delay:0.5s" onclick="openModal('tasksModal')">
+  <div class="flex items-center gap-3 mb-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span><span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Task</span><span class="ml-auto text-[10px] px-1.5 py-0.5 rounded border bg-red-500/20 text-red-400 border-red-500/30">High</span></div>
+  <p class="font-headline text-sm font-medium">Finish ECON assignment</p>
+  <p class="font-body text-xs text-on-surface-variant">Due 11:59 PM</p>
+</div>
+<!-- RIGHT — Memory -->
+<div class="sim-card sim-card-side absolute top-1/2 -translate-y-1/2 right-[2%] glass-card p-4 rounded-xl border border-white/10 w-52 z-20 animate-float" style="animation-delay:1s" onclick="openModal('memoryModal')">
+  <div class="flex items-center gap-3 mb-2"><span class="material-symbols-outlined text-[#40c090] text-sm">memory</span><span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Memory</span><span class="ml-auto text-[10px] px-1.5 py-0.5 rounded border bg-[#40c090]/10 text-[#40c090] border-[#40c090]/20">Food</span></div>
+  <p class="font-headline text-sm font-medium">Likes iced vanilla latte</p>
+  <p class="font-body text-xs text-on-surface-variant">Sarah · saved Nov 12</p>
+</div>
+<!-- BOTTOM-RIGHT — Habit -->
+<div class="sim-card sim-card-side absolute bottom-[17%] right-[4%] glass-card p-4 rounded-xl border border-white/10 w-52 z-20 animate-float" style="animation-delay:1.5s" onclick="openModal('tasksModal')">
+  <div class="flex items-center gap-3 mb-2"><span class="material-symbols-outlined text-[#ff8c42] text-sm">local_fire_department</span><span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Habit</span><span class="ml-auto text-[10px] px-1.5 py-0.5 rounded border bg-[#ff8c42]/10 text-[#ff8c42] border-[#ff8c42]/20">🔥 12</span></div>
+  <p class="font-headline text-sm font-medium">Morning run</p>
+  <p class="font-body text-xs text-on-surface-variant">12 day streak · 6:30 AM</p>
+</div>
+<!-- BOTTOM CENTER — Thought -->
+<div class="sim-card sim-card-center absolute bottom-[3%] left-1/2 -translate-x-1/2 glass-card p-4 rounded-xl border border-white/10 w-52 z-20 animate-float" style="animation-delay:2s" onclick="openModal('thoughtModal')">
+  <div class="flex items-center gap-3 mb-2"><span class="material-symbols-outlined text-primary text-sm">mic</span><span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Thought</span></div>
+  <p class="font-headline text-sm font-medium">Startup idea about AI</p>
+  <div class="flex gap-2 mt-2"><span class="text-[10px] px-1.5 py-0.5 rounded border bg-primary/10 text-primary border-primary/20">Summary</span><span class="text-[10px] px-1.5 py-0.5 rounded border bg-white/5 text-on-surface-variant border-white/10">3 tasks</span></div>
+</div>
+<!-- BOTTOM-LEFT — Suggestion -->
+<div class="sim-card sim-card-side absolute bottom-[17%] left-[4%] glass-card p-4 rounded-xl border border-white/10 w-52 z-20 animate-float" style="animation-delay:2.5s" onclick="openModal('timelineModal')">
+  <div class="flex items-center gap-3 mb-2"><span class="material-symbols-outlined text-tertiary text-sm">lightbulb</span><span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">For You</span></div>
+  <p class="font-headline text-sm font-medium">Good time to hit the gym</p>
+  <p class="font-body text-xs text-on-surface-variant">2h free · energy window open</p>
+</div>
+<!-- LEFT — Project -->
+<div class="sim-card sim-card-side absolute top-1/2 -translate-y-1/2 left-[2%] glass-card p-4 rounded-xl border border-white/10 w-52 z-20 animate-float" style="animation-delay:3s" onclick="openModal('timelineModal')">
+  <div class="flex items-center gap-3 mb-2"><span class="material-symbols-outlined text-secondary text-sm">folder</span><span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Project</span></div>
+  <p class="font-headline text-sm font-medium">Syno Launch</p>
+  <div class="h-1.5 w-full bg-white/10 rounded-full mt-2 mb-1"><div class="h-full bg-secondary rounded-full" style="width:68%"></div></div>
+  <p class="font-body text-xs text-on-surface-variant">68% · 4 tasks left</p>
+</div>
+<!-- TOP-LEFT — Reminder -->
+<div class="sim-card sim-card-side absolute top-[17%] left-[4%] glass-card p-4 rounded-xl border border-white/10 w-52 z-20 animate-float" style="animation-delay:3.5s" onclick="openModal('thoughtModal')">
+  <div class="flex items-center gap-3 mb-2"><span class="material-symbols-outlined text-[#e06888] text-sm">notifications</span><span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Reminder</span><div class="ml-auto w-2 h-2 rounded-full border-2 border-[#e06888]"></div></div>
+  <p class="font-headline text-sm font-medium">Call mom</p>
+  <p class="font-body text-xs text-on-surface-variant">6:00 PM · Daily</p>
+</div>
+</div><!-- /radial-scene -->
+</div>
+<p class="text-center text-on-surface-variant/50 text-xs tracking-widest font-body mt-6 mb-2">Tasks. Reminders. Memory. Schedule. All created instantly.</p>
+</section>
+<!-- Core Experience Transformation (Interactive Timeline) -->
+<section class="max-w-7xl mx-auto px-8 pt-4 pb-16 mb-16" id="timeline" style="opacity:1">
+<div class="text-center mb-14">
+  <p class="text-primary font-mono text-xs tracking-[0.2em] uppercase mb-4 bg-primary/10 px-4 py-1.5 rounded-full inline-block">How it works</p>
+  <h2 class="font-headline text-4xl md:text-6xl font-bold tracking-tighter leading-tight mb-4">From your voice<br/>to your day.</h2>
+  <p class="font-body text-on-surface-variant text-xl max-w-xl mx-auto">Speak naturally — Syno figures out the rest in seconds.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 items-stretch">
+<!-- Step 1 -->
+<div class="flex flex-col bg-surface-container-low p-5 md:p-8 rounded-2xl md:rounded-3xl group hover:bg-surface-container-high transition-all cursor-pointer">
+<div class="mb-auto">
+<div class="w-8 h-8 md:w-12 md:h-12 rounded-full bg-primary/20 flex items-center justify-center mb-4">
+<span class="text-primary font-bold text-sm">01</span>
+</div>
+<h3 class="font-headline text-base md:text-2xl font-bold mb-2 md:mb-4">Voice Input</h3>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">
+                            "Hey Syno, remind me to call Mark tomorrow at 10 and block an hour for writing."
+                        </p>
+</div>
+<div class="mt-12 h-12 flex items-center gap-1">
+<div class="waveform-bar h-2 w-1 bg-primary rounded-full" style="animation-delay: 0.1s"></div>
+<div class="waveform-bar h-6 w-1 bg-secondary rounded-full" style="animation-delay: 0.2s"></div>
+<div class="waveform-bar h-10 w-1 bg-primary rounded-full" style="animation-delay: 0.3s"></div>
+<div class="waveform-bar h-4 w-1 bg-secondary rounded-full" style="animation-delay: 0.4s"></div>
+<div class="waveform-bar h-8 w-1 bg-primary rounded-full" style="animation-delay: 0.5s"></div>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col bg-surface-container-low p-5 md:p-8 rounded-2xl md:rounded-3xl group hover:bg-surface-container-high transition-all cursor-pointer">
+<div class="mb-auto">
+<div class="w-8 h-8 md:w-12 md:h-12 rounded-full bg-secondary/20 flex items-center justify-center mb-4">
+<span class="text-secondary font-bold text-sm">02</span>
+</div>
+<h3 class="font-headline text-base md:text-2xl font-bold mb-2 md:mb-4">Transcription</h3>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">
+                            Syno turns natural language into actions instantly.
+                        </p>
+</div>
+<div class="mt-12">
+<div class="h-px w-full bg-outline-variant/30 mb-2 overflow-hidden">
+<div class="h-full bg-secondary w-0 group-hover:w-full transition-all duration-1000"></div>
+</div>
+<div class="h-px w-3/4 bg-outline-variant/30 mb-2 overflow-hidden">
+<div class="h-full bg-secondary w-0 group-hover:w-full transition-all duration-700 delay-300"></div>
+</div>
+<div class="h-px w-1/2 bg-outline-variant/30 overflow-hidden">
+<div class="h-full bg-secondary w-0 group-hover:w-full transition-all duration-500 delay-600"></div>
+</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col bg-surface-container-low p-5 md:p-8 rounded-2xl md:rounded-3xl group hover:bg-surface-container-high transition-all cursor-pointer">
+<div class="mb-auto">
+<div class="w-8 h-8 md:w-12 md:h-12 rounded-full bg-tertiary/20 flex items-center justify-center mb-4">
+<span class="text-tertiary font-bold text-sm">03</span>
+</div>
+<h3 class="font-headline text-base md:text-2xl font-bold mb-2 md:mb-4">Structuring</h3>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">
+                            Intelligence identifies intent, entities, and temporal context automatically.
+                        </p>
+</div>
+<div class="mt-12 flex flex-wrap gap-2">
+<span class="bg-tertiary/10 text-tertiary text-[10px] px-2 py-1 rounded-md border border-tertiary/20 group-hover:scale-110 transition-transform">TASK: CALL</span>
+<span class="bg-primary/10 text-primary text-[10px] px-2 py-1 rounded-md border border-primary/20 group-hover:scale-110 transition-transform delay-100">ENTITY: MARK</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col bg-primary-container p-5 md:p-8 rounded-2xl md:rounded-3xl shadow-2xl cursor-pointer hover:scale-[1.02] transition-all group" onclick="openModal('timelineModal')">
+<div class="mb-auto text-on-primary-container">
+<div class="w-8 h-8 md:w-12 md:h-12 rounded-full bg-on-primary-container/10 flex items-center justify-center mb-4">
+<span class="font-bold text-sm">04</span>
+</div>
+<h3 class="font-headline text-base md:text-2xl font-bold mb-2 md:mb-4">Timeline Build</h3>
+<p class="font-body text-sm leading-relaxed opacity-80">
+                            Your schedule updates instantly. Conflicts are resolved before they happen.
+                        </p>
+</div>
+<div class="mt-12 bg-white/10 rounded-xl p-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-primary-container group-hover:rotate-12 transition-transform">done_all</span>
+<div class="h-2 w-full bg-on-primary-container/20 rounded-full overflow-hidden">
+<div class="h-full bg-on-primary-container w-0 group-hover:w-full transition-all duration-1000"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- ── Start Anywhere Section ── -->
+<section id="start-anywhere" class="max-w-7xl mx-auto px-8 pt-4 pb-16 mb-16" style="opacity:1">
+
+  <!-- Heading -->
+  <div class="text-center mb-20">
+    <p class="text-primary font-mono text-xs tracking-[0.2em] uppercase mb-4 bg-primary/10 px-4 py-1.5 rounded-full inline-block">How to use it</p>
+    <h2 class="font-headline text-3xl md:text-6xl font-bold tracking-tighter leading-tight mb-6">
+      Start anywhere.<br/>Syno takes it from there.
+    </h2>
+    <p class="font-body text-on-surface-variant text-xl max-w-2xl mx-auto leading-relaxed">
+      From your lock screen to your day — everything begins with a single action.
+    </p>
+  </div>
+
+  <!-- 3-step flow -->
+  <div class="flex flex-col md:flex-row items-start gap-6 md:gap-0">
+
+    <!-- ── STEP 1: Widget ── -->
+    <div class="sa-step flex-1 flex flex-col items-center px-4" style="transition-delay:0s">
+
+      <!-- Card -->
+      <div class="w-full glass-card rounded-3xl p-6 border border-white/10 mb-8 min-h-[300px] flex flex-col relative overflow-hidden">
+        <!-- subtle bg glow -->
+        <div class="absolute -top-10 -left-10 w-40 h-40 bg-primary/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- Widget header -->
+        <div class="flex items-center gap-2 mb-5">
+          <div class="w-6 h-6 rounded-full bg-primary/25 flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary" style="font-size:14px;font-variation-settings:'FILL' 1">all_inclusive</span>
+          </div>
+          <span class="text-white/50 text-[11px] font-mono uppercase tracking-widest">Syno Widget</span>
+        </div>
+
+        <!-- Mini info card -->
+        <div class="bg-white/5 rounded-2xl p-3.5 border border-white/8 mb-3 flex items-center gap-3">
+          <div class="w-8 h-8 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-primary" style="font-size:16px;font-variation-settings:'FILL' 1">wb_sunny</span>
+          </div>
+          <div>
+            <p class="text-white/35 text-[10px] uppercase tracking-wider">Good morning</p>
+            <p class="text-white text-sm font-semibold">3 tasks · 2 meetings</p>
+          </div>
+        </div>
+
+        <!-- Mic input bar -->
+        <div class="mic-ring bg-surface-container-high rounded-2xl px-4 py-3.5 flex items-center gap-3 border border-primary/40 cursor-pointer mt-auto">
+          <span class="material-symbols-outlined text-primary" style="font-size:20px;font-variation-settings:'FILL' 1">mic</span>
+          <span class="text-white/35 text-sm flex-1 font-body italic">Say anything...</span>
+          <div class="flex gap-0.5 items-center h-4">
+            <div class="w-0.5 bg-primary/60 rounded-full" style="height:6px"></div>
+            <div class="w-0.5 bg-primary/80 rounded-full" style="height:12px"></div>
+            <div class="w-0.5 bg-primary rounded-full" style="height:16px"></div>
+            <div class="w-0.5 bg-primary/80 rounded-full" style="height:10px"></div>
+            <div class="w-0.5 bg-primary/60 rounded-full" style="height:6px"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step label -->
+      <div class="flex items-center gap-3 mb-2">
+        <div class="w-7 h-7 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center text-primary text-xs font-bold">1</div>
+        <p class="font-headline text-lg font-semibold">Open the widget</p>
+      </div>
+      <p class="text-on-surface-variant text-sm text-center max-w-[180px] leading-relaxed">Tap to speak from your home screen or lock screen</p>
+    </div>
+
+    <!-- ── Connector A ── -->
+    <div class="sa-arrow hidden md:flex flex-col items-center justify-center self-stretch px-1 pt-[140px]" style="transition-delay:0.3s">
+      <div class="sa-connector h-px w-16 bg-gradient-to-r from-primary/40 via-primary/70 to-secondary/40 rounded-full mb-1"></div>
+      <span class="material-symbols-outlined text-primary/50" style="font-size:20px">arrow_forward</span>
+    </div>
+    <div class="sa-arrow flex md:hidden justify-center w-full py-2">
+      <span class="material-symbols-outlined text-primary/50" style="font-size:28px">arrow_downward</span>
+    </div>
+
+    <!-- ── STEP 2: Voice ── -->
+    <div class="sa-step flex-1 flex flex-col items-center px-4" style="transition-delay:0.2s">
+
+      <div class="w-full glass-card rounded-3xl p-6 border border-white/10 mb-8 min-h-[300px] flex flex-col relative overflow-hidden">
+        <div class="absolute -top-10 -right-10 w-40 h-40 bg-secondary/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- Recording indicator -->
+        <div class="flex items-center gap-2 mb-6">
+          <div class="w-2 h-2 rounded-full bg-red-400 animate-pulse"></div>
+          <span class="text-white/40 text-[11px] font-mono uppercase tracking-widest">Listening</span>
+        </div>
+
+        <!-- Waveform -->
+        <div class="flex items-center justify-center gap-1 h-14 mb-6">
+          <div class="waveform-bar w-1.5 rounded-full bg-secondary/60" style="height:10px;animation-delay:0.0s"></div>
+          <div class="waveform-bar w-1.5 rounded-full bg-secondary/80" style="height:22px;animation-delay:0.1s"></div>
+          <div class="waveform-bar w-1.5 rounded-full bg-primary"      style="height:42px;animation-delay:0.2s"></div>
+          <div class="waveform-bar w-1.5 rounded-full bg-secondary"    style="height:30px;animation-delay:0.3s"></div>
+          <div class="waveform-bar w-1.5 rounded-full bg-primary"      style="height:50px;animation-delay:0.4s"></div>
+          <div class="waveform-bar w-1.5 rounded-full bg-secondary/80" style="height:36px;animation-delay:0.5s"></div>
+          <div class="waveform-bar w-1.5 rounded-full bg-primary/80"   style="height:20px;animation-delay:0.6s"></div>
+          <div class="waveform-bar w-1.5 rounded-full bg-secondary"    style="height:44px;animation-delay:0.7s"></div>
+          <div class="waveform-bar w-1.5 rounded-full bg-primary"      style="height:28px;animation-delay:0.8s"></div>
+          <div class="waveform-bar w-1.5 rounded-full bg-secondary/80" style="height:48px;animation-delay:0.9s"></div>
+          <div class="waveform-bar w-1.5 rounded-full bg-primary/70"   style="height:16px;animation-delay:1.0s"></div>
+          <div class="waveform-bar w-1.5 rounded-full bg-secondary/60" style="height:34px;animation-delay:1.1s"></div>
+        </div>
+
+        <!-- Transcription bubble -->
+        <div class="bg-white/5 rounded-2xl px-4 py-4 border border-white/10 mt-auto">
+          <p class="text-white/90 text-sm leading-relaxed font-body">
+            <span class="text-primary/70">"</span>Remind me to call Mark tomorrow and block an hour for writing<span class="text-primary/70">"</span>
+          </p>
+          <div class="flex items-center gap-1.5 mt-2.5">
+            <div class="h-0.5 flex-1 bg-secondary/30 rounded-full overflow-hidden">
+              <div class="h-full bg-secondary rounded-full sa-progress-bar" style="width:0%;transition:width 1.5s ease"></div>
+            </div>
+            <span class="text-white/30 text-[10px] font-mono">processing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 mb-2">
+        <div class="w-7 h-7 rounded-full bg-secondary/20 border border-secondary/40 flex items-center justify-center text-secondary text-xs font-bold">2</div>
+        <p class="font-headline text-lg font-semibold">Just speak naturally</p>
+      </div>
+      <p class="text-on-surface-variant text-sm text-center max-w-[180px] leading-relaxed">No commands, no structure — talk like you think</p>
+    </div>
+
+    <!-- ── Connector B ── -->
+    <div class="sa-arrow hidden md:flex flex-col items-center justify-center self-stretch px-1 pt-[140px]" style="transition-delay:0.5s">
+      <div class="sa-connector h-px w-16 bg-gradient-to-r from-secondary/40 via-secondary/70 to-tertiary/40 rounded-full mb-1"></div>
+      <span class="material-symbols-outlined text-secondary/50" style="font-size:20px">arrow_forward</span>
+    </div>
+    <div class="sa-arrow flex md:hidden justify-center w-full py-2">
+      <span class="material-symbols-outlined text-secondary/50" style="font-size:28px">arrow_downward</span>
+    </div>
+
+    <!-- ── STEP 3: Results ── -->
+    <div class="sa-step flex-1 flex flex-col items-center px-4" style="transition-delay:0.4s">
+
+      <div class="w-full glass-card rounded-3xl p-6 border border-white/10 mb-8 min-h-[300px] flex flex-col relative overflow-hidden">
+        <div class="absolute -bottom-10 -right-10 w-44 h-44 bg-tertiary/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- Done header -->
+        <div class="flex items-center gap-2 mb-5">
+          <span class="material-symbols-outlined text-emerald-400" style="font-size:16px;font-variation-settings:'FILL' 1">check_circle</span>
+          <span class="text-emerald-400/80 text-[11px] font-mono uppercase tracking-widest">Done instantly</span>
+        </div>
+
+        <!-- Output rows -->
+        <div class="sa-output-card flex items-center gap-3 bg-primary/8 rounded-2xl px-3 py-3 border border-primary/20 mb-2.5">
+          <div class="w-9 h-9 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-primary" style="font-size:17px;font-variation-settings:'FILL' 1">notifications_active</span>
+          </div>
+          <div class="min-w-0">
+            <p class="text-white text-xs font-semibold">Reminder set</p>
+            <p class="text-white/45 text-[11px] truncate">Call Mark · Tomorrow 10:00 AM</p>
+          </div>
+          <span class="material-symbols-outlined text-emerald-400 ml-auto flex-shrink-0" style="font-size:15px;font-variation-settings:'FILL' 1">check_circle</span>
+        </div>
+
+        <div class="sa-output-card flex items-center gap-3 bg-secondary/8 rounded-2xl px-3 py-3 border border-secondary/20 mb-2.5">
+          <div class="w-9 h-9 rounded-xl bg-secondary/20 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-secondary" style="font-size:17px;font-variation-settings:'FILL' 1">calendar_month</span>
+          </div>
+          <div class="min-w-0">
+            <p class="text-white text-xs font-semibold">Calendar block added</p>
+            <p class="text-white/45 text-[11px] truncate">Writing · 1 hr · Tomorrow PM</p>
+          </div>
+          <span class="material-symbols-outlined text-emerald-400 ml-auto flex-shrink-0" style="font-size:15px;font-variation-settings:'FILL' 1">check_circle</span>
+        </div>
+
+        <div class="sa-output-card flex items-center gap-3 bg-tertiary/8 rounded-2xl px-3 py-3 border border-tertiary/20">
+          <div class="w-9 h-9 rounded-xl bg-tertiary/20 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-tertiary" style="font-size:17px;font-variation-settings:'FILL' 1">task_alt</span>
+          </div>
+          <div class="min-w-0">
+            <p class="text-white text-xs font-semibold">Task created</p>
+            <p class="text-white/45 text-[11px] truncate">Call Mark · High priority</p>
+          </div>
+          <span class="material-symbols-outlined text-emerald-400 ml-auto flex-shrink-0" style="font-size:15px;font-variation-settings:'FILL' 1">check_circle</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 mb-2">
+        <div class="w-7 h-7 rounded-full bg-tertiary/20 border border-tertiary/40 flex items-center justify-center text-tertiary text-xs font-bold">3</div>
+        <p class="font-headline text-lg font-semibold">Syno handles the rest</p>
+      </div>
+      <p class="text-on-surface-variant text-sm text-center max-w-[180px] leading-relaxed">Tasks, reminders, calendar — created instantly</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Feature Bento Grid -->
+<section id="features" class="max-w-7xl mx-auto px-8 mb-16" style="opacity:1">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-xl">
+<h2 class="font-headline text-3xl md:text-5xl font-bold mb-6">Built around how<br/>you actually think.</h2>
+<p class="font-body text-on-surface-variant text-lg">No forms. No folders. No friction. Just say what's on your mind and Syno sorts it out.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-6 grid-rows-2 gap-6 h-auto md:min-h-[800px]">
+<!-- Voice OS -->
+<div class="md:col-span-3 md:row-span-1 bg-surface-container-low rounded-[2rem] p-10 flex flex-col justify-between relative overflow-hidden group">
+<div class="relative z-10">
+<h3 class="font-headline text-3xl font-bold mb-4">Just speak</h3>
+<p class="text-on-surface-variant max-w-xs mb-8">No typing. No forms. Just say what's on your mind and Syno figures out what to do with it.</p>
+</div>
+<div class="absolute bottom-0 right-0 w-2/3 h-32 flex items-end justify-center gap-[3px] px-4 opacity-40 group-hover:opacity-70 transition-opacity duration-1000">
+  <div class="waveform-bar w-1 rounded-full bg-primary" style="height:20%;animation-delay:0.0s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-primary" style="height:55%;animation-delay:0.1s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-secondary" style="height:80%;animation-delay:0.2s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-primary" style="height:45%;animation-delay:0.3s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-secondary" style="height:95%;animation-delay:0.4s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-primary" style="height:60%;animation-delay:0.5s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-secondary" style="height:35%;animation-delay:0.6s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-primary" style="height:75%;animation-delay:0.7s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-secondary" style="height:50%;animation-delay:0.8s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-primary" style="height:90%;animation-delay:0.9s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-secondary" style="height:40%;animation-delay:1.0s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-primary" style="height:65%;animation-delay:1.1s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-secondary" style="height:25%;animation-delay:1.2s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-primary" style="height:85%;animation-delay:1.3s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-secondary" style="height:55%;animation-delay:1.4s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-primary" style="height:70%;animation-delay:1.5s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-secondary" style="height:30%;animation-delay:1.6s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-primary" style="height:80%;animation-delay:1.7s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-secondary" style="height:45%;animation-delay:1.8s"></div>
+  <div class="waveform-bar w-1 rounded-full bg-primary" style="height:60%;animation-delay:1.9s"></div>
+</div>
+</div>
+<!-- Memory System -->
+<div class="md:col-span-3 md:row-span-1 bg-surface-container-low rounded-[2rem] p-10 flex flex-col justify-between relative overflow-hidden group cursor-pointer" id="memory" onclick="openModal('memoryModal')">
+<div class="relative z-10">
+<h3 class="font-headline text-3xl font-bold mb-4">It remembers for you</h3>
+<p class="text-on-surface-variant max-w-xs mb-8">Sarah's coffee order. The dentist appointment. That idea you had at 11pm. All of it, safe and searchable.</p>
+</div>
+<div class="flex gap-4 mt-auto relative z-10 flex-wrap">
+<div class="glass-card px-4 py-2 rounded-full border border-white/5 text-sm hover:bg-white/10 transition-colors">"The flight number for Paris"</div>
+<div class="glass-card px-4 py-2 rounded-full border border-white/5 text-sm hover:bg-white/10 transition-colors">"Sarah's birthday"</div>
+<div class="glass-card px-4 py-2 rounded-full border border-white/5 text-sm hover:bg-white/10 transition-colors">"Best pizza in London"</div>
+</div>
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-transparent group-hover:opacity-100 transition-opacity opacity-0"></div>
+</div>
+<!-- Auto-Planned -->
+<div class="md:col-span-2 md:row-span-1 bg-surface-container-low rounded-[2rem] p-10 flex flex-col group cursor-pointer hover:bg-surface-container-high transition-colors" onclick="openModal('calendarModal')">
+<h3 class="font-headline text-3xl font-bold mb-4">Your day, sorted</h3>
+<p class="text-on-surface-variant mb-12">Syno looks at everything on your plate and figures out what to do first, so you don't have to.</p>
+<div class="mt-auto space-y-4">
+<div class="h-10 bg-surface-container-highest rounded-xl border-l-4 border-secondary flex items-center px-4 text-xs group-hover:translate-x-2 transition-transform">Deep Work Session</div>
+<div class="h-10 bg-surface-container-highest/50 rounded-xl border-l-4 border-outline-variant flex items-center px-4 text-xs opacity-50 group-hover:translate-x-2 transition-transform delay-75">Lunch Break</div>
+</div>
+</div>
+<!-- Thought Recording -->
+<div class="md:col-span-4 md:row-span-1 bg-gradient-to-br from-secondary-container to-surface-container-highest rounded-[2rem] p-10 flex items-center relative overflow-hidden group cursor-pointer" onclick="openModal('thoughtModal')">
+<div class="max-w-md relative z-10">
+<h3 class="font-headline text-3xl font-bold mb-4 text-white">Dump your brain</h3>
+<p class="text-white/70 mb-8">Talk through a problem, a plan, an idea — Syno pulls out the tasks, the decisions, and the things worth saving.</p>
+<button onclick="openModal('thoughtModal')" class="bg-white text-black font-bold px-6 py-3 rounded-full flex items-center gap-2 w-max group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">mic</span>
+  Record Thought
+</button>
+</div>
+<div class="absolute -right-10 top-0 h-full w-1/2 opacity-30 group-hover:opacity-50 transition-opacity duration-[2000ms]" style="background: radial-gradient(ellipse at 60% 50%, rgba(105,156,255,0.4) 0%, rgba(167,139,250,0.2) 40%, transparent 70%); filter: blur(40px);"></div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-5xl mx-auto px-8 py-20 text-center relative" style="opacity:1">
+<div class="absolute inset-0 bg-primary/10 blur-[150px] rounded-full"></div>
+<div class="relative z-10">
+<h2 class="font-headline text-3xl md:text-7xl font-bold mb-8 tracking-tighter">Your day shouldn't<br/>feel like a second job.</h2>
+<p class="font-body text-xl text-on-surface-variant mb-12 max-w-xl mx-auto">Syno quietly keeps everything together so you don't have to.</p>
+<div class="flex flex-col items-center gap-6">
+<form class="flex w-full max-w-md bg-surface-container-highest p-1.5 rounded-full border border-white/5 focus-within:border-primary transition-all" onsubmit="handleEmailSubmit(event)">
+<input class="bg-transparent border-none focus:ring-0 text-white flex-1 px-6 font-body" placeholder="Enter your email" type="email" id="emailInput" required/>
+<button class="bg-primary text-on-primary font-bold px-8 py-3 rounded-full hover:bg-primary-dim transition-colors" type="submit">Notify Me</button>
+</form>
+<p class="text-xs font-body text-on-surface-variant">No credit card. No commitment. Just early access.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-neutral-950 w-full py-12 px-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+<div class="flex flex-col items-center md:items-start">
+<div class="text-xl font-black text-white font-headline mb-2">Syno AI</div>
+<div class="text-neutral-500 font-body text-sm tracking-wide">© 2026 Syno AI. All rights reserved.</div>
+</div>
+</div>
+</footer>
+
+<!-- MODALS -->
+
+<!-- Early Access Modal -->
+<div class="fixed inset-0 z-[150] hidden items-center justify-center p-6 sm:p-12" id="earlyAccessModal">
+<div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal('earlyAccessModal')"></div>
+<div class="glass-card w-full max-w-lg rounded-[2.5rem] border border-white/10 overflow-hidden relative z-10 modal-enter">
+<div class="p-10 md:p-12">
+<div class="flex items-center justify-between mb-8">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-lg">rocket_launch</span>
+</div>
+<button class="text-on-surface-variant hover:text-white" onclick="closeModal('earlyAccessModal')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<h3 class="font-headline text-2xl md:text-4xl font-bold mb-3">Get Early Access</h3>
+<p class="text-on-surface-variant mb-8">Be among the first to experience the future of personal OS. We'll notify you the moment your spot is ready.</p>
+<form class="space-y-4" onsubmit="handleEarlyAccess(event)">
+<div>
+<label class="block text-xs font-label uppercase tracking-widest text-on-surface-variant mb-2">Full Name</label>
+<input name="name" class="w-full bg-surface-container-highest border border-white/10 rounded-2xl px-5 py-3.5 text-white focus:outline-none focus:border-primary transition-colors" placeholder="Your name" type="text" required/>
+</div>
+<div>
+<label class="block text-xs font-label uppercase tracking-widest text-on-surface-variant mb-2">Email</label>
+<input name="email" id="modalEmailInput" class="w-full bg-surface-container-highest border border-white/10 rounded-2xl px-5 py-3.5 text-white focus:outline-none focus:border-primary transition-colors" placeholder="you@example.com" type="email" required/>
+</div>
+<div>
+<label class="block text-xs font-label uppercase tracking-widest text-on-surface-variant mb-2">What excites you most?</label>
+<div class="grid grid-cols-2 gap-3 mt-2" id="interestGrid">
+<button type="button" class="interest-btn px-4 py-2.5 rounded-xl border border-white/10 text-sm text-on-surface-variant hover:border-primary hover:text-primary transition-all text-left" onclick="toggleInterest(this)">Voice OS</button>
+<button type="button" class="interest-btn px-4 py-2.5 rounded-xl border border-white/10 text-sm text-on-surface-variant hover:border-primary hover:text-primary transition-all text-left" onclick="toggleInterest(this)">Memory System</button>
+<button type="button" class="interest-btn px-4 py-2.5 rounded-xl border border-white/10 text-sm text-on-surface-variant hover:border-primary hover:text-primary transition-all text-left" onclick="toggleInterest(this)">Auto-Planning</button>
+<button type="button" class="interest-btn px-4 py-2.5 rounded-xl border border-white/10 text-sm text-on-surface-variant hover:border-primary hover:text-primary transition-all text-left" onclick="toggleInterest(this)">Mindspace</button>
+</div>
+</div>
+<button type="submit" class="w-full bg-gradient-to-br from-primary to-primary-dim text-on-primary font-bold py-4 rounded-2xl hover:opacity-90 transition-opacity mt-2">
+Secure My Spot
+</button>
+</form>
+<p class="text-center text-xs text-on-surface-variant mt-6">No spam. Unsubscribe anytime.</p>
+</div>
+</div>
+</div>
+
+<!-- Film Modal -->
+<div class="fixed inset-0 z-[150] hidden items-center justify-center p-6" id="filmModal">
+<div class="absolute inset-0 bg-black/90 backdrop-blur-sm" onclick="closeModal('filmModal')"></div>
+<div class="relative z-10 w-full max-w-4xl modal-enter">
+<button class="absolute -top-12 right-0 text-on-surface-variant hover:text-white flex items-center gap-2" onclick="closeModal('filmModal')">
+<span class="material-symbols-outlined">close</span>
+<span class="text-sm">Close</span>
+</button>
+<div class="aspect-video bg-surface-container-lowest rounded-[2rem] border border-white/10 overflow-hidden flex items-center justify-center relative">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20"></div>
+<div class="relative z-10 text-center px-8">
+<div class="w-24 h-24 rounded-full bg-white/10 border-2 border-white/30 flex items-center justify-center mx-auto mb-6 cursor-pointer hover:bg-white/20 transition-colors group" onclick="toggleFilmPlay(this)">
+<span class="material-symbols-outlined text-white text-5xl group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;" id="playIcon">play_arrow</span>
+</div>
+<p class="font-headline text-2xl font-bold text-white mb-2">Syno — The Vision</p>
+<p class="text-on-surface-variant text-sm">3 minutes · Coming Soon</p>
+</div>
+<div class="absolute bottom-6 left-6 right-6">
+<div class="h-1 bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-0 transition-all duration-[3000ms]" id="filmProgress"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Thought Recording Modal -->
+<div class="fixed inset-0 z-[150] hidden items-center justify-center p-6 sm:p-12" id="thoughtModal">
+<div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal('thoughtModal')"></div>
+<div class="glass-card w-full max-w-2xl rounded-[2.5rem] border border-white/10 overflow-hidden relative z-10 modal-enter">
+<div class="p-8 md:p-12">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-4">
+<div class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+<span class="font-label text-xs tracking-widest uppercase opacity-60">Thought Captured 2m ago</span>
+</div>
+<button class="text-on-surface-variant hover:text-white" onclick="closeModal('thoughtModal')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Waveform Animation -->
+<div class="flex items-center gap-1 h-16 mb-12">
+<div class="waveform-bar w-1 bg-primary/40 rounded-full" style="animation-delay: 0.1s"></div>
+<div class="waveform-bar w-1 bg-primary/60 rounded-full" style="animation-delay: 0.3s"></div>
+<div class="waveform-bar w-1 bg-primary rounded-full" style="animation-delay: 0.5s"></div>
+<div class="waveform-bar w-1 bg-secondary rounded-full" style="animation-delay: 0.2s"></div>
+<div class="waveform-bar w-1 bg-primary rounded-full" style="animation-delay: 0.4s"></div>
+<div class="waveform-bar w-1 bg-secondary/40 rounded-full" style="animation-delay: 0.6s"></div>
+<div class="waveform-bar w-1 bg-primary/50 rounded-full" style="animation-delay: 0.1s"></div>
+<div class="waveform-bar w-1 bg-primary rounded-full" style="animation-delay: 0.3s"></div>
+<div class="waveform-bar w-1 bg-primary/40 rounded-full" style="animation-delay: 0.1s"></div>
+<div class="waveform-bar w-1 bg-primary/60 rounded-full" style="animation-delay: 0.3s"></div>
+<div class="waveform-bar w-1 bg-primary rounded-full" style="animation-delay: 0.5s"></div>
+<div class="waveform-bar w-1 bg-secondary rounded-full" style="animation-delay: 0.2s"></div>
+<div class="waveform-bar w-1 bg-primary rounded-full" style="animation-delay: 0.4s"></div>
+<div class="waveform-bar w-1 bg-secondary/40 rounded-full" style="animation-delay: 0.6s"></div>
+</div>
+<div class="space-y-8">
+<div>
+<h4 class="font-label text-[10px] uppercase tracking-widest text-primary mb-2">Transcript</h4>
+<p class="font-headline text-xl leading-relaxed italic opacity-90">"Remember to follow up with Sarah about the venture lead after the board meeting tomorrow."</p>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div class="p-4 rounded-2xl bg-white/5 border border-white/5">
+<h4 class="font-label text-[10px] uppercase tracking-widest text-secondary mb-3">AI Summary</h4>
+<p class="text-sm text-on-surface-variant">Syno summarized this as an action item relating to 'Venture Capital' and 'Networking'.</p>
+</div>
+<div class="p-4 rounded-2xl bg-white/5 border border-white/5">
+<h4 class="font-label text-[10px] uppercase tracking-widest text-tertiary mb-3">Extracted Task</h4>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+<span class="text-sm">Call Sarah regarding VC</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-primary/10 p-6 flex justify-between items-center">
+<div class="flex gap-2">
+<span class="bg-primary/20 text-primary text-[10px] px-2 py-1 rounded">WORK</span>
+<span class="bg-secondary/20 text-secondary text-[10px] px-2 py-1 rounded">URGENT</span>
+</div>
+<button class="bg-white text-black font-bold px-4 py-2 rounded-lg text-sm hover:bg-white/90 transition-colors" onclick="showToast('Note saved to Memory'); closeModal('thoughtModal')">Save Note</button>
+</div>
+</div>
+</div>
+
+<!-- Memory System Modal -->
+<div class="fixed inset-0 z-[150] hidden items-center justify-center p-6 sm:p-12" id="memoryModal">
+<div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal('memoryModal')"></div>
+<div class="glass-card w-full max-w-4xl h-[80vh] rounded-[2.5rem] border border-white/10 overflow-hidden relative z-10 modal-enter flex flex-col">
+<div class="p-8 border-b border-white/5 flex items-center justify-between">
+<div class="flex-1 max-w-md">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-white/5 border-none rounded-full py-3 pl-12 pr-6 focus:ring-1 focus:ring-primary text-sm" placeholder="Search your life..." type="text" id="memorySearch" oninput="filterMemories(this.value)"/>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-white" onclick="closeModal('memoryModal')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex flex-1 overflow-hidden">
+<aside class="w-64 border-r border-white/5 p-6 space-y-2 overflow-y-auto">
+<div class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant mb-4 px-2">Categories</div>
+<button class="w-full text-left px-4 py-2 rounded-xl bg-primary/20 text-primary flex items-center gap-3 memory-cat-btn active" onclick="filterByCategory('all', this)">
+<span class="material-symbols-outlined text-sm">auto_stories</span>
+<span class="text-sm font-medium">All Memories</span>
+</button>
+<button class="w-full text-left px-4 py-2 rounded-xl text-on-surface-variant hover:bg-white/5 flex items-center gap-3 transition-colors memory-cat-btn" onclick="filterByCategory('food', this)">
+<span class="material-symbols-outlined text-sm">restaurant</span>
+<span class="text-sm font-medium">Food</span>
+</button>
+<button class="w-full text-left px-4 py-2 rounded-xl text-on-surface-variant hover:bg-white/5 flex items-center gap-3 transition-colors memory-cat-btn" onclick="filterByCategory('travel', this)">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-sm font-medium">Places</span>
+</button>
+<button class="w-full text-left px-4 py-2 rounded-xl text-on-surface-variant hover:bg-white/5 flex items-center gap-3 transition-colors memory-cat-btn" onclick="filterByCategory('ideas', this)">
+<span class="material-symbols-outlined text-sm">lightbulb</span>
+<span class="text-sm font-medium">Ideas</span>
+</button>
+</aside>
+<main class="flex-1 p-8 overflow-y-auto no-scrollbar" id="memoriesGrid">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6" id="memoriesContainer">
+<div class="glass-card p-6 rounded-2xl border border-white/5 group hover:border-primary/30 transition-all cursor-pointer memory-card" data-category="food">
+<span class="text-[10px] text-on-surface-variant uppercase mb-2 block">Nov 12, 2023</span>
+<p class="text-sm font-medium mb-4">Sarah mentioned she loves the espresso from that small roastery in Portland.</p>
+<div class="flex gap-2 flex-wrap">
+<span class="text-[10px] bg-white/5 px-2 py-1 rounded">PERSON: SARAH</span>
+<span class="text-[10px] bg-white/5 px-2 py-1 rounded">GIFT IDEA</span>
+</div>
+</div>
+<div class="glass-card p-6 rounded-2xl border border-white/5 group hover:border-primary/30 transition-all cursor-pointer memory-card" data-category="travel">
+<span class="text-[10px] text-on-surface-variant uppercase mb-2 block">Oct 29, 2023</span>
+<p class="text-sm font-medium mb-4">The flight code for our trip to Tokyo is NH204.</p>
+<div class="flex gap-2 flex-wrap">
+<span class="text-[10px] bg-white/5 px-2 py-1 rounded">TRAVEL</span>
+<span class="text-[10px] bg-white/5 px-2 py-1 rounded">TOKYO</span>
+</div>
+</div>
+<div class="glass-card p-6 rounded-2xl border border-white/5 group hover:border-primary/30 transition-all cursor-pointer memory-card" data-category="ideas">
+<span class="text-[10px] text-on-surface-variant uppercase mb-2 block">Oct 15, 2023</span>
+<p class="text-sm font-medium mb-4">Concept for a voice-first OS that feels like a natural extension of the brain.</p>
+<div class="flex gap-2 flex-wrap">
+<span class="text-[10px] bg-white/5 px-2 py-1 rounded">SYNO</span>
+<span class="text-[10px] bg-white/5 px-2 py-1 rounded">DREAM</span>
+</div>
+</div>
+<div class="glass-card p-6 rounded-2xl border border-white/5 group hover:border-primary/30 transition-all cursor-pointer memory-card" data-category="food">
+<span class="text-[10px] text-on-surface-variant uppercase mb-2 block">Sep 08, 2023</span>
+<p class="text-sm font-medium mb-4">Best ramen spot in NYC: Ichiran on 40th St. Get the extra firm noodles.</p>
+<div class="flex gap-2 flex-wrap">
+<span class="text-[10px] bg-white/5 px-2 py-1 rounded">FOOD</span>
+<span class="text-[10px] bg-white/5 px-2 py-1 rounded">NYC</span>
+</div>
+</div>
+<div class="glass-card p-6 rounded-2xl border border-white/5 group hover:border-primary/30 transition-all cursor-pointer memory-card" data-category="travel">
+<span class="text-[10px] text-on-surface-variant uppercase mb-2 block">Aug 22, 2023</span>
+<p class="text-sm font-medium mb-4">Hotel in Paris: Le Marais district, near Musée Picasso. Check-in code: MP2024.</p>
+<div class="flex gap-2 flex-wrap">
+<span class="text-[10px] bg-white/5 px-2 py-1 rounded">TRAVEL</span>
+<span class="text-[10px] bg-white/5 px-2 py-1 rounded">PARIS</span>
+</div>
+</div>
+<div class="glass-card p-6 rounded-2xl border border-white/5 group hover:border-primary/30 transition-all cursor-pointer memory-card" data-category="ideas">
+<span class="text-[10px] text-on-surface-variant uppercase mb-2 block">Jul 03, 2023</span>
+<p class="text-sm font-medium mb-4">Idea: Build a morning routine system that adapts based on your sleep quality data.</p>
+<div class="flex gap-2 flex-wrap">
+<span class="text-[10px] bg-white/5 px-2 py-1 rounded">HEALTH</span>
+<span class="text-[10px] bg-white/5 px-2 py-1 rounded">PRODUCTIVITY</span>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+
+<!-- Timeline / Calendar Modal -->
+<div class="fixed inset-0 z-[150] hidden items-center justify-center p-6 sm:p-12" id="timelineModal">
+<div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal('timelineModal')"></div>
+<div class="glass-card w-full max-w-4xl h-[85vh] rounded-[2.5rem] border border-white/10 overflow-hidden relative z-10 modal-enter flex flex-col">
+<div class="p-8 border-b border-white/5 flex items-center justify-between">
+<div>
+<h3 class="font-headline text-2xl font-bold">Today's Timeline</h3>
+<p class="text-sm text-on-surface-variant">3 conflicts resolved automatically</p>
+</div>
+<button class="text-on-surface-variant hover:text-white" onclick="closeModal('timelineModal')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto p-8 space-y-8 no-scrollbar">
+<!-- 09:00 -->
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 h-full w-px bg-white/10"></div>
+<div class="absolute left-[-4px] top-1 w-2 h-2 rounded-full bg-primary"></div>
+<span class="absolute left-[-50px] top-0 text-[10px] text-on-surface-variant font-medium">09:00</span>
+<div class="glass-card p-4 rounded-2xl border-l-4 border-primary bg-primary/5">
+<h4 class="text-sm font-bold mb-1">Deep Work: Interface Design</h4>
+<p class="text-xs text-on-surface-variant">Scheduled based on your peak focus window.</p>
+</div>
+</div>
+<!-- 11:30 -->
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 h-full w-px bg-white/10"></div>
+<div class="absolute left-[-4px] top-1 w-2 h-2 rounded-full bg-secondary"></div>
+<span class="absolute left-[-50px] top-0 text-[10px] text-on-surface-variant font-medium">11:30</span>
+<div class="glass-card p-4 rounded-2xl border-l-4 border-secondary bg-secondary/5 group cursor-pointer">
+<div class="flex justify-between">
+<h4 class="text-sm font-bold mb-1">Call with Mark</h4>
+<span class="text-[10px] bg-secondary/20 text-secondary px-2 py-0.5 rounded">NEW</span>
+</div>
+<p class="text-xs text-on-surface-variant italic">"Syno: Moved from 10:00 to avoid clash with deep work."</p>
+</div>
+</div>
+<!-- 13:00 -->
+<div class="relative pl-12 opacity-50">
+<div class="absolute left-0 top-0 h-full w-px bg-white/10"></div>
+<div class="absolute left-[-4px] top-1 w-2 h-2 rounded-full bg-outline"></div>
+<span class="absolute left-[-50px] top-0 text-[10px] text-on-surface-variant font-medium">13:00</span>
+<div class="p-4 rounded-2xl border border-white/5 border-dashed">
+<h4 class="text-sm font-bold">Lunch Break</h4>
+</div>
+</div>
+<!-- 14:00 -->
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 h-full w-px bg-white/10"></div>
+<div class="absolute left-[-4px] top-1 w-2 h-2 rounded-full bg-tertiary"></div>
+<span class="absolute left-[-50px] top-0 text-[10px] text-on-surface-variant font-medium">14:00</span>
+<div class="glass-card p-4 rounded-2xl border-l-4 border-tertiary bg-tertiary/5">
+<h4 class="text-sm font-bold mb-1">Board Meeting Prep</h4>
+<p class="text-xs text-on-surface-variant">Preparation for tomorrow's 10AM meeting.</p>
+</div>
+</div>
+<!-- 16:00 -->
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 h-full w-px bg-white/10"></div>
+<div class="absolute left-[-4px] top-1 w-2 h-2 rounded-full bg-primary-dim"></div>
+<span class="absolute left-[-50px] top-0 text-[10px] text-on-surface-variant font-medium">16:00</span>
+<div class="glass-card p-4 rounded-2xl border-l-4 border-primary-dim bg-primary/5">
+<h4 class="text-sm font-bold mb-1">Writing Block</h4>
+<p class="text-xs text-on-surface-variant">1 hour reserved for long-form writing.</p>
+</div>
+</div>
+<!-- 18:00 -->
+<div class="relative pl-12 opacity-50">
+<div class="absolute left-0 top-0 h-full w-px bg-white/10"></div>
+<div class="absolute left-[-4px] top-1 w-2 h-2 rounded-full bg-outline"></div>
+<span class="absolute left-[-50px] top-0 text-[10px] text-on-surface-variant font-medium">18:00</span>
+<div class="p-4 rounded-2xl border border-white/5 border-dashed">
+<h4 class="text-sm font-bold">Wind Down</h4>
+</div>
+</div>
+</div>
+<div class="p-6 bg-white/5 border-t border-white/5 text-center">
+<button class="bg-primary text-on-primary font-bold px-8 py-3 rounded-full text-sm hover:bg-primary-dim transition-colors" onclick="showToast('Calendar synced successfully!'); closeModal('timelineModal')">Sync with Calendar</button>
+</div>
+</div>
+</div>
+
+<!-- Tasks Modal -->
+<div class="fixed inset-0 z-[150] hidden items-center justify-center p-6" id="tasksModal">
+<div class="absolute inset-0 bg-black/80" onclick="closeModal('tasksModal')"></div>
+<div class="glass-card w-full max-w-lg p-10 rounded-[2.5rem] relative z-10 modal-enter border border-white/10">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-headline text-3xl font-bold">Tasks</h3>
+<button class="text-on-surface-variant hover:text-white" onclick="closeModal('tasksModal')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="space-y-3" id="tasksList">
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 cursor-pointer group transition-all task-item">
+<div class="w-6 h-6 rounded-full border-2 border-primary group-hover:bg-primary/20 flex items-center justify-center flex-shrink-0" onclick="toggleTask(this)">
+<span class="material-symbols-outlined text-[14px] text-primary opacity-0 group-hover:opacity-100 transition-opacity">check</span>
+</div>
+<span class="flex-1 text-sm">Buy coffee beans</span>
+<span class="text-[10px] text-on-surface-variant">Today</span>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 cursor-pointer group transition-all task-item">
+<div class="w-6 h-6 rounded-full border-2 border-primary flex items-center justify-center flex-shrink-0" onclick="toggleTask(this)">
+<span class="material-symbols-outlined text-[14px] text-primary opacity-0 group-hover:opacity-100 transition-opacity">check</span>
+</div>
+<span class="flex-1 text-sm">Follow up with Sarah</span>
+<span class="text-[10px] bg-secondary/20 text-secondary px-2 py-0.5 rounded">Urgent</span>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 cursor-pointer group transition-all task-item">
+<div class="w-6 h-6 rounded-full border-2 border-primary flex items-center justify-center flex-shrink-0" onclick="toggleTask(this)">
+<span class="material-symbols-outlined text-[14px] text-primary opacity-0 group-hover:opacity-100 transition-opacity">check</span>
+</div>
+<span class="flex-1 text-sm">Review board meeting deck</span>
+<span class="text-[10px] text-on-surface-variant">Tomorrow</span>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 cursor-pointer group transition-all task-item">
+<div class="w-6 h-6 rounded-full border-2 border-tertiary flex items-center justify-center flex-shrink-0" onclick="toggleTask(this)">
+<span class="material-symbols-outlined text-[14px] text-tertiary opacity-0 group-hover:opacity-100 transition-opacity">check</span>
+</div>
+<span class="flex-1 text-sm">Book Tokyo flights</span>
+<span class="text-[10px] bg-tertiary/20 text-tertiary px-2 py-0.5 rounded">Soon</span>
+</div>
+</div>
+<div class="mt-6 pt-6 border-t border-white/5 flex items-center gap-3">
+<input class="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder:text-on-surface-variant focus:outline-none focus:border-primary" placeholder="Add a task..." id="newTaskInput" onkeydown="if(event.key==='Enter') addTask()"/>
+<button class="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center hover:bg-primary/30 transition-colors" onclick="addTask()">
+<span class="material-symbols-outlined text-primary text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+
+<!-- Calendar Modal -->
+<div class="fixed inset-0 z-[150] hidden items-center justify-center p-6 sm:p-12" id="calendarModal">
+<div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal('calendarModal')"></div>
+<div class="glass-card w-full max-w-2xl rounded-[2.5rem] border border-white/10 overflow-hidden relative z-10 modal-enter">
+<div class="p-8">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-headline text-2xl font-bold">Auto-Planned Day</h3>
+<button class="text-on-surface-variant hover:text-white" onclick="closeModal('calendarModal')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-secondary/10 border border-secondary/20">
+<div class="text-secondary text-xs font-medium w-14">9:00 AM</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Deep Work Session</p>
+<p class="text-xs text-on-surface-variant">2 hours · High energy block</p>
+</div>
+<span class="material-symbols-outlined text-secondary text-sm">bolt</span>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-primary/10 border border-primary/20">
+<div class="text-primary text-xs font-medium w-14">11:00 AM</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Marketing Strategy</p>
+<p class="text-xs text-on-surface-variant">1.5 hours · Team meeting</p>
+</div>
+<span class="material-symbols-outlined text-primary text-sm">groups</span>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 opacity-60">
+<div class="text-on-surface-variant text-xs font-medium w-14">12:30 PM</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Lunch Break</p>
+<p class="text-xs text-on-surface-variant">30 min · Auto-blocked</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">restaurant</span>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-tertiary/10 border border-tertiary/20">
+<div class="text-tertiary text-xs font-medium w-14">2:00 PM</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Board Meeting Prep</p>
+<p class="text-xs text-on-surface-variant">1 hour · High priority</p>
+</div>
+<span class="material-symbols-outlined text-tertiary text-sm">star</span>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-primary-dim/10 border border-primary-dim/20">
+<div class="text-primary-fixed-dim text-xs font-medium w-14">3:30 PM</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Writing Block</p>
+<p class="text-xs text-on-surface-variant">1 hour · Focus time</p>
+</div>
+<span class="material-symbols-outlined text-primary-fixed-dim text-sm">edit_note</span>
+</div>
+</div>
+<div class="mt-6 p-4 bg-white/5 rounded-2xl flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-sm">auto_fix_high</span>
+<p class="text-xs text-on-surface-variant">Syno resolved 2 scheduling conflicts and optimized for your focus patterns.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Toast Notification -->
+<div class="fixed bottom-28 left-1/2 -translate-x-1/2 z-[200] hidden" id="toast">
+<div class="glass-card px-6 py-3 rounded-full border border-white/10 text-sm font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span id="toastMessage">Done!</span>
+</div>
+</div>
+
+
+<script>
+        // --- Modal Management ---
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.classList.add('active-modal');
+        }
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            if (!document.querySelector('.fixed:not(.hidden)[id$="Modal"]')) {
+                document.body.classList.remove('active-modal');
+            }
+        }
+        // Close modals with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('[id$="Modal"]:not(.hidden)').forEach(m => {
+                    closeModal(m.id);
+                });
+            }
+        });
+
+        // --- Toast Notification ---
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').textContent = message;
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+                toast.classList.remove('flex');
+            }, 3000);
+        }
+
+        // --- Early Access Form ---
+        const FORMSPREE = 'https://formspree.io/f/mykbypeb';
+
+        async function handleEarlyAccess(e) {
+            e.preventDefault();
+            const form = e.target;
+            const submitBtn = form.querySelector('[type="submit"]');
+            const name  = form.querySelector('[name="name"]').value.trim();
+            const email = form.querySelector('[name="email"]').value.trim();
+            const interests = [...document.querySelectorAll('.interest-btn.border-primary')]
+                .map(b => b.textContent.trim()).join(', ') || 'None selected';
+
+            submitBtn.textContent = 'Sending…';
+            submitBtn.disabled = true;
+
+            try {
+                const res = await fetch(FORMSPREE, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({ name, email, interests, _subject: `New Early Access signup: ${name}` })
+                });
+                if (res.ok) {
+                    closeModal('earlyAccessModal');
+                    showToast('🎉 You\'re on the list! We\'ll be in touch.');
+                    form.reset();
+                    document.querySelectorAll('.interest-btn').forEach(b => {
+                        b.classList.remove('border-primary','text-primary');
+                        b.classList.add('border-white/10','text-on-surface-variant');
+                    });
+                } else {
+                    throw new Error('Server error');
+                }
+            } catch {
+                showToast('Something went wrong — please try again.');
+            } finally {
+                submitBtn.textContent = 'Secure My Spot';
+                submitBtn.disabled = false;
+            }
+        }
+        function toggleInterest(btn) {
+            btn.classList.toggle('border-primary');
+            btn.classList.toggle('text-primary');
+            btn.classList.toggle('bg-primary/10');
+            btn.classList.toggle('border-white/10');
+            btn.classList.toggle('text-on-surface-variant');
+        }
+
+        // --- Email Submit (CTA Section) ---
+        async function handleEmailSubmit(e) {
+            e.preventDefault();
+            const input = document.getElementById('emailInput');
+            const notifyBtn = e.target.querySelector('[type="submit"]');
+            const email = input.value.trim();
+
+            notifyBtn.textContent = 'Sending…';
+            notifyBtn.disabled = true;
+
+            try {
+                const res = await fetch(FORMSPREE, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({ email, _subject: `New Early Access signup: ${email}` })
+                });
+                if (res.ok) {
+                    showToast('🎉 You\'re on the list! We\'ll be in touch.');
+                    input.value = '';
+                } else {
+                    throw new Error('Server error');
+                }
+            } catch {
+                showToast('Something went wrong — please try again.');
+            } finally {
+                notifyBtn.textContent = 'Notify Me';
+                notifyBtn.disabled = false;
+            }
+        }
+
+        // --- Film Modal Play ---
+        function toggleFilmPlay(btn) {
+            const icon = document.getElementById('playIcon');
+            const progress = document.getElementById('filmProgress');
+            icon.textContent = 'pause';
+            progress.style.width = '100%';
+            setTimeout(() => showToast('Full film coming soon!'), 500);
+        }
+
+        // --- Tasks ---
+        function toggleTask(checkBtn) {
+            const taskItem = checkBtn.closest('.task-item');
+            taskItem.classList.toggle('opacity-40');
+            const icon = checkBtn.querySelector('.material-symbols-outlined');
+            if (taskItem.classList.contains('opacity-40')) {
+                checkBtn.classList.add('bg-primary/30');
+                icon.style.opacity = '1';
+                showToast('Task completed!');
+            } else {
+                checkBtn.classList.remove('bg-primary/30');
+                icon.style.opacity = '0';
+            }
+        }
+        function addTask() {
+            const input = document.getElementById('newTaskInput');
+            const text = input.value.trim();
+            if (!text) return;
+            const list = document.getElementById('tasksList');
+            const div = document.createElement('div');
+            div.className = 'flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 cursor-pointer group transition-all task-item';
+            div.innerHTML = `
+                <div class="w-6 h-6 rounded-full border-2 border-primary flex items-center justify-center flex-shrink-0" onclick="toggleTask(this)">
+                    <span class="material-symbols-outlined text-[14px] text-primary opacity-0 group-hover:opacity-100 transition-opacity">check</span>
+                </div>
+                <span class="flex-1 text-sm">${text}</span>
+                <span class="text-[10px] text-on-surface-variant">Today</span>
+            `;
+            list.insertBefore(div, list.firstChild);
+            input.value = '';
+            showToast('Task added!');
+        }
+
+        // --- Memory Search & Filter ---
+        function filterMemories(query) {
+            const cards = document.querySelectorAll('.memory-card');
+            const q = query.toLowerCase();
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                card.style.display = text.includes(q) ? '' : 'none';
+            });
+        }
+        function filterByCategory(category, btn) {
+            document.querySelectorAll('.memory-cat-btn').forEach(b => {
+                b.classList.remove('bg-primary/20', 'text-primary');
+                b.classList.add('text-on-surface-variant');
+            });
+            btn.classList.add('bg-primary/20', 'text-primary');
+            btn.classList.remove('text-on-surface-variant');
+            const cards = document.querySelectorAll('.memory-card');
+            cards.forEach(card => {
+                card.style.display = (category === 'all' || card.dataset.category === category) ? '' : 'none';
+            });
+        }
+
+        // --- Typing Effect Simulation ---
+        const typingText = "To achieve peak performance, one must remove all friction between intention and action. Syno is designed to be the invisible bridge that connects thought to reality...";
+        let i = 0;
+        const typingArea = document.getElementById('typing-area');
+        function typeWriter() {
+            if (i < typingText.length) {
+                typingArea.textContent = typingText.substring(0, i + 1);
+                i++;
+                setTimeout(typeWriter, 45);
+            } else {
+                setTimeout(() => { i = 0; typeWriter(); }, 5000);
+            }
+        }
+        window.addEventListener('load', typeWriter);
+
+        // --- Scroll Animations ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('section').forEach(section => {
+            if (!section.style.opacity) {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(24px)';
+                section.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+            }
+            observer.observe(section);
+        });
+    // ── Start Anywhere — scroll-triggered animations ──
+    (function initStartAnywhere() {
+      const section = document.getElementById('start-anywhere');
+      if (!section) return;
+
+      const steps   = section.querySelectorAll('.sa-step');
+      const arrows  = section.querySelectorAll('.sa-arrow');
+      const outputs = section.querySelectorAll('.sa-output-card');
+      const progress = section.querySelector('.sa-progress-bar');
+
+      let fired = false;
+
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !fired) {
+            fired = true;
+
+            // Animate steps in with their own CSS transition-delay
+            steps.forEach(el => el.classList.add('sa-visible'));
+
+            // Arrows slightly after
+            arrows.forEach((el, i) => {
+              setTimeout(() => el.classList.add('sa-visible'), 300 + i * 200);
+            });
+
+            // Progress bar on step 2
+            if (progress) setTimeout(() => { progress.style.width = '100%'; }, 600);
+
+            // Output cards staggered (step 3 appears after step card fades in ~400ms + delays)
+            outputs.forEach((el, i) => {
+              setTimeout(() => el.classList.add('sa-visible'), 700 + i * 280);
+            });
+
+            obs.disconnect();
+          }
+        });
+      }, { threshold: 0.15 });
+
+      obs.observe(section);
+    })();
+
+    // Radial line connector — positions SVG lines to exact card centers at runtime
+    function updateRadialLines() {
+      const container = document.getElementById('radial-container');
+      const orb = document.getElementById('radial-orb');
+      const svg = container.querySelector('svg');
+      if (!container || !orb || !svg) return;
+
+      const cr = container.getBoundingClientRect();
+      const or = orb.getBoundingClientRect();
+      const W = cr.width, H = cr.height;
+
+      // Orb center in container-relative coords
+      const ox = or.left + or.width / 2 - cr.left;
+      const oy = or.top + or.height / 2 - cr.top;
+
+      // viewBox is 1000×900 with preserveAspectRatio=none → linear mapping
+      const toVB = (x, y) => [x / W * 1000, y / H * 900];
+      const [vox, voy] = toVB(ox, oy);
+
+      const cards = container.querySelectorAll('.sim-card');
+      const lines = svg.querySelectorAll('line');
+      const grads = svg.querySelectorAll('linearGradient');
+
+      cards.forEach((card, i) => {
+        if (i >= lines.length) return;
+        const r = card.getBoundingClientRect();
+        const cx = r.left + r.width / 2 - cr.left;
+        const cy = r.top + r.height / 2 - cr.top;
+        const [vcx, vcy] = toVB(cx, cy);
+
+        lines[i].setAttribute('x1', vox);
+        lines[i].setAttribute('y1', voy);
+        lines[i].setAttribute('x2', vcx);
+        lines[i].setAttribute('y2', vcy);
+
+        if (grads[i]) {
+          grads[i].setAttribute('x1', vox);
+          grads[i].setAttribute('y1', voy);
+          grads[i].setAttribute('x2', vcx);
+          grads[i].setAttribute('y2', vcy);
+        }
+      });
+    }
+
+    window.addEventListener('load', updateRadialLines);
+    window.addEventListener('resize', updateRadialLines);
+    // Re-run after fonts/images settle
+    setTimeout(updateRadialLines, 300);
+
+    // Scroll spy — highlight active nav link
+    (function() {
+      const sections = [
+        { id: 'hero', href: '#hero' },
+        { id: 'timeline', href: '#timeline' },
+        { id: 'start-anywhere', href: '#start-anywhere' },
+        { id: 'features', href: '#features' },
+      ];
+      const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+      function setActive(href) {
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === href) {
+            link.classList.add('text-white');
+            link.classList.remove('text-on-surface-variant');
+          } else {
+            link.classList.remove('text-white');
+            link.classList.add('text-on-surface-variant');
+          }
+        });
+      }
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const match = sections.find(s => s.id === entry.target.id);
+            if (match) setActive(match.href);
+          }
+        });
+      }, { rootMargin: '-100px 0px -60% 0px', threshold: 0 });
+
+      sections.forEach(s => {
+        const el = document.getElementById(s.id);
+        if (el) observer.observe(el);
+      });
+    })();
+    </script>
+</body></html>
