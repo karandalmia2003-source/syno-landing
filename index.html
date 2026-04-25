@@ -21,56 +21,56 @@
           extend: {
             colors: {
               "on-error-container": "#ffb2b9",
-              "secondary-dim": "#818cf8",
-              "inverse-primary": "#842cd3",
-              "on-secondary": "#001e4a",
-              "surface-dim": "#0e0e0e",
-              "surface-container-highest": "#262626",
-              "primary-fixed": "#c284ff",
-              "on-primary-container": "#360061",
+              "secondary-dim": "#b8956a",
+              "inverse-primary": "#16a34a",
+              "on-secondary": "#1a0e05",
+              "surface-dim": "#171210",
+              "surface-container-highest": "#2a2420",
+              "primary-fixed": "#86efac",
+              "on-primary-container": "#052e16",
               "on-error": "#490013",
-              "secondary-container": "#005ac2",
-              "inverse-surface": "#fcf8f8",
+              "secondary-container": "#4a3520",
+              "inverse-surface": "#f5f0ec",
               "on-surface-variant": "#adaaaa",
-              "surface": "#0c0b0b",
-              "on-secondary-container": "#f7f7ff",
-              "secondary-fixed-dim": "#a9c4ff",
-              "primary": "#a78bfa",
-              "on-primary-fixed-variant": "#430076",
+              "surface": "#120e0b",
+              "on-secondary-container": "#f5efe8",
+              "secondary-fixed-dim": "#d4b896",
+              "primary": "#4ade80",
+              "on-primary-fixed-variant": "#052e16",
               "tertiary-container": "#f8a010",
-              "surface-container": "#1a1919",
+              "surface-container": "#1e1a16",
               "error-container": "#a70138",
-              "surface-container-lowest": "#000000",
+              "surface-container-lowest": "#0a0806",
               "tertiary-dim": "#e79400",
-              "secondary-fixed": "#bfd1ff",
-              "on-primary": "#47007c",
+              "secondary-fixed": "#e8d5b7",
+              "on-primary": "#052e16",
               "on-background": "#ffffff",
-              "outline-variant": "#494847",
+              "outline-variant": "#3d3830",
               "on-surface": "#ffffff",
               "on-tertiary": "#573500",
-              "primary-fixed-dim": "#b971ff",
-              "primary-container": "#c284ff",
-              "inverse-on-surface": "#565554",
+              "primary-fixed-dim": "#4ade80",
+              "primary-container": "#14532d",
+              "inverse-on-surface": "#4a4540",
               "tertiary-fixed-dim": "#e79400",
               "on-tertiary-container": "#4a2c00",
               "tertiary": "#ffb148",
-              "on-primary-fixed": "#000000",
-              "primary-dim": "#9c48ea",
+              "on-primary-fixed": "#052e16",
+              "primary-dim": "#22c55e",
               "error": "#ff6e84",
-              "surface-variant": "#262626",
-              "surface-container-high": "#201f1f",
-              "secondary": "#699cff",
+              "surface-variant": "#2a2420",
+              "surface-container-high": "#241f1a",
+              "secondary": "#c8a87a",
               "on-tertiary-fixed": "#2a1700",
               "tertiary-fixed": "#f8a010",
-              "on-secondary-fixed-variant": "#004da8",
-              "surface-tint": "#cc97ff",
-              "surface-bright": "#2c2c2c",
+              "on-secondary-fixed-variant": "#4a3520",
+              "surface-tint": "#4ade80",
+              "surface-bright": "#302820",
               "on-tertiary-fixed-variant": "#563400",
-              "on-secondary-fixed": "#003271",
+              "on-secondary-fixed": "#1a0e05",
               "error-dim": "#d73357",
-              "background": "#0e0e0e",
-              "surface-container-low": "#131313",
-              "outline": "#777575"
+              "background": "#171210",
+              "surface-container-low": "#181410",
+              "outline": "#6b6560"
             },
             fontFamily: {
               "headline": ["Space Grotesk"],
@@ -115,7 +115,7 @@
             box-shadow: none;
         }
         .text-gradient-primary {
-            background: linear-gradient(135deg, #cc97ff 0%, #699cff 100%);
+            background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -124,7 +124,7 @@
             scroll-padding-top: 100px;
         }
         body {
-            background-color: #0e0e0e;
+            background-color: #171210;
             color: #ffffff;
             font-family: 'Inter', sans-serif;
         }
@@ -157,8 +157,8 @@
             overflow: hidden;
         }
         @keyframes orbPulse {
-            0%, 100% { box-shadow: 0 0 40px rgba(204,151,255,0.35), 0 0 80px rgba(204,151,255,0.1); }
-            50% { box-shadow: 0 0 70px rgba(204,151,255,0.65), 0 0 140px rgba(105,156,255,0.2); }
+            0%, 100% { box-shadow: 0 0 40px rgba(74,222,128,0.35), 0 0 80px rgba(74,222,128,0.1); }
+            50% { box-shadow: 0 0 70px rgba(74,222,128,0.65), 0 0 140px rgba(200,168,122,0.2); }
         }
         @keyframes dashFlow {
             to { stroke-dashoffset: -12; }
@@ -185,8 +185,8 @@
         }
         .sim-card:hover {
             transform: translateY(-6px) !important;
-            border-color: rgba(204,151,255,0.4);
-            box-shadow: 0 8px 32px rgba(204,151,255,0.15);
+            border-color: rgba(74,222,128,0.4);
+            box-shadow: 0 8px 32px rgba(74,222,128,0.15);
         }
 
         /* ── Start Anywhere Section ── */
@@ -224,9 +224,9 @@
         }
         /* pulse ring on the mic button */
         @keyframes ringPulse {
-            0%   { box-shadow: 0 0 0 0 rgba(204,151,255,0.5); }
-            70%  { box-shadow: 0 0 0 8px rgba(204,151,255,0); }
-            100% { box-shadow: 0 0 0 0 rgba(204,151,255,0); }
+            0%   { box-shadow: 0 0 0 0 rgba(74,222,128,0.5); }
+            70%  { box-shadow: 0 0 0 8px rgba(74,222,128,0); }
+            100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
         }
         .mic-ring { animation: ringPulse 2s ease-out infinite; }
         /* connector line glow */
@@ -240,7 +240,7 @@
             top: 0; left: -100%;
             width: 60%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(204,151,255,0.7), transparent);
+            background: linear-gradient(90deg, transparent, rgba(74,222,128,0.7), transparent);
             animation: connectorShimmer 2.5s ease-in-out infinite;
         }
         @keyframes connectorShimmer {
@@ -293,14 +293,14 @@
 <!-- endpoints = center of each card based on CSS position + ~45px half card-height -->
 <svg class="radial-svg absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 900" preserveAspectRatio="none">
   <defs>
-    <linearGradient id="hl1" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="500" y2="72"><stop offset="0%" stop-color="#cc97ff" stop-opacity="0.8"/><stop offset="100%" stop-color="#cc97ff" stop-opacity="0.2"/></linearGradient>
-    <linearGradient id="hl2" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="856" y2="198"><stop offset="0%" stop-color="#699cff" stop-opacity="0.8"/><stop offset="100%" stop-color="#699cff" stop-opacity="0.2"/></linearGradient>
-    <linearGradient id="hl3" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="876" y2="450"><stop offset="0%" stop-color="#cc97ff" stop-opacity="0.8"/><stop offset="100%" stop-color="#cc97ff" stop-opacity="0.2"/></linearGradient>
-    <linearGradient id="hl4" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="856" y2="702"><stop offset="0%" stop-color="#699cff" stop-opacity="0.8"/><stop offset="100%" stop-color="#699cff" stop-opacity="0.2"/></linearGradient>
-    <linearGradient id="hl5" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="500" y2="820"><stop offset="0%" stop-color="#cc97ff" stop-opacity="0.8"/><stop offset="100%" stop-color="#cc97ff" stop-opacity="0.2"/></linearGradient>
-    <linearGradient id="hl6" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="144" y2="702"><stop offset="0%" stop-color="#699cff" stop-opacity="0.8"/><stop offset="100%" stop-color="#699cff" stop-opacity="0.2"/></linearGradient>
-    <linearGradient id="hl7" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="124" y2="450"><stop offset="0%" stop-color="#cc97ff" stop-opacity="0.8"/><stop offset="100%" stop-color="#cc97ff" stop-opacity="0.2"/></linearGradient>
-    <linearGradient id="hl8" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="144" y2="198"><stop offset="0%" stop-color="#699cff" stop-opacity="0.8"/><stop offset="100%" stop-color="#699cff" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="hl1" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="500" y2="72"><stop offset="0%" stop-color="#4ade80" stop-opacity="0.8"/><stop offset="100%" stop-color="#4ade80" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="hl2" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="856" y2="198"><stop offset="0%" stop-color="#c8a87a" stop-opacity="0.8"/><stop offset="100%" stop-color="#c8a87a" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="hl3" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="876" y2="450"><stop offset="0%" stop-color="#4ade80" stop-opacity="0.8"/><stop offset="100%" stop-color="#4ade80" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="hl4" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="856" y2="702"><stop offset="0%" stop-color="#c8a87a" stop-opacity="0.8"/><stop offset="100%" stop-color="#c8a87a" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="hl5" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="500" y2="820"><stop offset="0%" stop-color="#4ade80" stop-opacity="0.8"/><stop offset="100%" stop-color="#4ade80" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="hl6" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="144" y2="702"><stop offset="0%" stop-color="#c8a87a" stop-opacity="0.8"/><stop offset="100%" stop-color="#c8a87a" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="hl7" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="124" y2="450"><stop offset="0%" stop-color="#4ade80" stop-opacity="0.8"/><stop offset="100%" stop-color="#4ade80" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="hl8" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="144" y2="198"><stop offset="0%" stop-color="#c8a87a" stop-opacity="0.8"/><stop offset="100%" stop-color="#c8a87a" stop-opacity="0.2"/></linearGradient>
   </defs>
   <line x1="500" y1="450" x2="500" y2="72"  stroke="url(#hl1)" stroke-width="1.5" stroke-dasharray="5 6" class="dash-flow"/>
   <line x1="500" y1="450" x2="856" y2="198" stroke="url(#hl2)" stroke-width="1.5" stroke-dasharray="5 6" class="dash-flow" style="animation-delay:0.3s"/>
@@ -730,7 +730,7 @@
   Record Thought
 </button>
 </div>
-<div class="absolute -right-10 top-0 h-full w-1/2 opacity-30 group-hover:opacity-50 transition-opacity duration-[2000ms]" style="background: radial-gradient(ellipse at 60% 50%, rgba(105,156,255,0.4) 0%, rgba(167,139,250,0.2) 40%, transparent 70%); filter: blur(40px);"></div>
+<div class="absolute -right-10 top-0 h-full w-1/2 opacity-30 group-hover:opacity-50 transition-opacity duration-[2000ms]" style="background: radial-gradient(ellipse at 60% 50%, rgba(200,168,122,0.4) 0%, rgba(74,222,128,0.2) 40%, transparent 70%); filter: blur(40px);"></div>
 </div>
 </div>
 </section>
@@ -756,6 +756,9 @@
 <div class="flex flex-col items-center md:items-start">
 <div class="text-xl font-black text-white font-headline mb-2">Syno AI</div>
 <div class="text-neutral-500 font-body text-sm tracking-wide">© 2026 Syno AI. All rights reserved.</div>
+</div>
+<div class="flex gap-6 text-sm text-neutral-500">
+  <button onclick="openModal('privacyModal')" class="hover:text-white transition-colors">Privacy Policy</button>
 </div>
 </div>
 </footer>
@@ -1182,6 +1185,183 @@ Secure My Spot
 </div>
 </div>
 
+
+<!-- Privacy Policy Modal -->
+<div class="fixed inset-0 z-[150] hidden items-center justify-center p-6 sm:p-12" id="privacyModal">
+<div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal('privacyModal')"></div>
+<div class="glass-card w-full max-w-3xl max-h-[85vh] rounded-[2.5rem] border border-white/10 overflow-hidden relative z-10 modal-enter flex flex-col">
+  <div class="p-8 border-b border-white/5 flex items-center justify-between flex-shrink-0">
+    <h3 class="font-headline text-2xl font-bold">Privacy Policy</h3>
+    <button class="text-on-surface-variant hover:text-white" onclick="closeModal('privacyModal')">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+  <div class="flex-1 overflow-y-auto p-8 no-scrollbar space-y-6 text-sm text-on-surface-variant leading-relaxed">
+    <p class="text-white/50 text-xs">Effective Date: April 14, 2026</p>
+    <p>Syno, Inc. ("we," "us," or "our") operates the Syno mobile application (the "App"). This Privacy Policy describes how we collect, use, store, share, and protect your personal information when you use our App and related services. By using the App, you consent to the practices described in this policy.</p>
+
+    <div>
+      <h4 class="text-white font-semibold mb-3">1. Information We Collect</h4>
+      <p class="text-white/70 font-medium mb-2">1.1 Information You Provide Directly</p>
+      <p class="mb-2">When you use the App, you may provide us with:</p>
+      <ul class="list-disc list-inside space-y-1 pl-2">
+        <li>account registration information such as your name, email address, and password;</li>
+        <li>voice recordings and audio input captured through the App's voice interface;</li>
+        <li>text input, including tasks, notes, reminders, and other content you create;</li>
+        <li>calendar events, scheduling preferences, and time-related data;</li>
+        <li>health and wellness information you voluntarily input, such as medication reminders, fitness goals, or lifestyle preferences; and</li>
+        <li>feedback, support requests, and communications you send to us.</li>
+      </ul>
+      <p class="text-white/70 font-medium mt-4 mb-2">1.2 Information Collected Automatically</p>
+      <p class="mb-2">When you use the App, we may automatically collect:</p>
+      <ul class="list-disc list-inside space-y-1 pl-2">
+        <li>device information such as device type, operating system version, unique device identifiers, and push notification tokens;</li>
+        <li>usage data including features accessed, interactions with the App, timestamps, and session duration;</li>
+        <li>crash reports and performance logs; and</li>
+        <li>approximate location data (if you grant permission) for location-relevant features such as weather or local recommendations.</li>
+      </ul>
+      <p class="text-white/70 font-medium mt-4 mb-2">1.3 Information from Third-Party Services</p>
+      <p>If you connect third-party services (e.g., calendar providers) to the App, we may receive data from those services in accordance with their terms and your permissions.</p>
+    </div>
+
+    <div>
+      <h4 class="text-white font-semibold mb-2">2. How We Use Your Information</h4>
+      <p class="mb-2">We use your information to:</p>
+      <ul class="list-disc list-inside space-y-1 pl-2">
+        <li>provide, maintain, and improve the App and its features;</li>
+        <li>process your voice and text inputs through AI models to generate structured outputs such as tasks, reminders, calendar events, and recommendations;</li>
+        <li>personalize your experience and provide context-aware suggestions;</li>
+        <li>send you notifications, reminders, and alerts you have configured;</li>
+        <li>respond to your support requests and communications;</li>
+        <li>analyze usage patterns to improve the App's functionality and user experience;</li>
+        <li>detect, prevent, and address technical issues and security threats; and</li>
+        <li>comply with legal obligations.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-white font-semibold mb-2">3. Voice Data Processing</h4>
+      <p class="mb-2">Voice is central to the App's functionality. When you use voice input:</p>
+      <ul class="list-disc list-inside space-y-1 pl-2">
+        <li>your audio is transmitted to our servers and/or third-party AI providers for transcription and processing;</li>
+        <li>transcribed text is further processed by AI models to extract actionable information;</li>
+        <li>we may retain transcriptions to provide features like memory recall and context continuity; and</li>
+        <li>raw audio recordings may be temporarily stored for processing and are deleted after transcription is complete, unless you explicitly choose to save them.</li>
+      </ul>
+      <p class="mt-3">We do not use your voice recordings to train general-purpose AI models. Your voice data is used solely to provide the Service to you.</p>
+    </div>
+
+    <div>
+      <h4 class="text-white font-semibold mb-2">4. AI Processing, Limitations, and Third-Party Providers</h4>
+      <p class="mb-3">The App uses artificial intelligence to process your inputs and generate outputs such as tasks, reminders, calendar events, and suggestions.</p>
+      <p class="text-white/70 font-medium mb-2">AI Limitations and Errors</p>
+      <p class="mb-2">Syno's AI features are provided on an "as is" basis and may produce inaccurate, incomplete, or unexpected results. Specifically:</p>
+      <ul class="list-disc list-inside space-y-1 pl-2 mb-3">
+        <li>AI-generated transcriptions may contain errors or misinterpret spoken input;</li>
+        <li>tasks, reminders, events, and other structured outputs generated by AI may be incorrectly categorized, timed, or formatted;</li>
+        <li>context-aware suggestions and recommendations may not be accurate or appropriate for your situation;</li>
+        <li>AI models may misunderstand ambiguous or complex inputs; and</li>
+        <li>AI outputs should be reviewed by you before relying on them for any important decision or action.</li>
+      </ul>
+      <p class="mb-3">You should not rely solely on Syno's AI-generated outputs for health, medical, legal, financial, or other critical decisions. We are not responsible for any consequences arising from errors, omissions, or inaccuracies in AI-generated content.</p>
+      <p class="text-white/70 font-medium mb-2">Third-Party AI Providers</p>
+      <p class="mb-2">The App uses third-party AI services (such as OpenAI) to process your inputs. When your data is sent to these providers:</p>
+      <ul class="list-disc list-inside space-y-1 pl-2">
+        <li>it is transmitted securely and used solely for the purpose of generating a response to your request;</li>
+        <li>we rely on the data processing agreements and privacy commitments of these providers; and</li>
+        <li>these providers may have their own data retention and processing policies, which we encourage you to review.</li>
+      </ul>
+      <p class="mt-3">We select providers who commit to not using customer input data for model training, but we cannot guarantee the practices of third parties. A current list of sub-processors is available upon request.</p>
+    </div>
+
+    <div>
+      <h4 class="text-white font-semibold mb-2">5. How We Share Your Information</h4>
+      <p class="mb-2">We do not sell your personal information. We may share your information with:</p>
+      <ul class="list-disc list-inside space-y-1 pl-2">
+        <li>AI and cloud service providers who process data on our behalf to operate the App;</li>
+        <li>analytics providers who help us understand App usage (in aggregated or de-identified form);</li>
+        <li>professional advisors such as lawyers, auditors, and accountants as necessary;</li>
+        <li>law enforcement or government authorities when required by law, legal process, or to protect our rights, safety, or property; and</li>
+        <li>a successor entity in the event of a merger, acquisition, bankruptcy, or sale of assets, in which case you will be notified.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-white font-semibold mb-2">6. Data Storage and Security</h4>
+      <p>Your data is stored on secure cloud infrastructure. We implement industry-standard security measures including encryption in transit (TLS) and at rest, access controls, and regular security assessments. However, no method of transmission or storage is 100% secure, and we cannot guarantee absolute security.</p>
+      <p class="mt-2">Your data may be processed and stored in the United States or other jurisdictions where our service providers operate. By using the App, you consent to the transfer of your data to these jurisdictions.</p>
+    </div>
+
+    <div>
+      <h4 class="text-white font-semibold mb-2">7. Data Retention</h4>
+      <p class="mb-2">We retain your personal information for as long as your account is active or as needed to provide the Service. Specifically:</p>
+      <ul class="list-disc list-inside space-y-1 pl-2">
+        <li>account information is retained until you delete your account;</li>
+        <li>User Content (tasks, memories, notes, etc.) is retained until you delete individual items or your account;</li>
+        <li>voice transcriptions are retained as part of your User Content;</li>
+        <li>raw audio recordings are deleted after processing unless explicitly saved;</li>
+        <li>usage logs and analytics data are retained in de-identified form for up to 24 months; and</li>
+        <li>certain data may be retained longer if required by law or for legitimate business purposes (e.g., fraud prevention, legal disputes).</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-white font-semibold mb-2">8. Your Rights and Choices</h4>
+      <p class="mb-2">Depending on your jurisdiction, you may have the right to:</p>
+      <ul class="list-disc list-inside space-y-1 pl-2 mb-3">
+        <li>access the personal information we hold about you;</li>
+        <li>request correction of inaccurate information;</li>
+        <li>request deletion of your personal information;</li>
+        <li>object to or restrict certain processing of your data;</li>
+        <li>request portability of your data in a structured, machine-readable format; and</li>
+        <li>withdraw consent at any time where processing is based on consent.</li>
+      </ul>
+      <p class="mb-3">To exercise these rights, contact us at <span class="text-primary">karandalmia2003@gmail.com</span>. We will respond within 30 days. We may need to verify your identity before processing your request.</p>
+      <p class="mb-2">You can also:</p>
+      <ul class="list-disc list-inside space-y-1 pl-2">
+        <li>manage notification permissions through your device settings;</li>
+        <li>delete individual items (tasks, memories, reminders) within the App;</li>
+        <li>delete your account entirely through the App's settings; and</li>
+        <li>revoke microphone or location permissions through your device settings at any time.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-white font-semibold mb-2">9. Children's Privacy</h4>
+      <p>The App is not directed to children under 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us at <span class="text-primary">karandalmia2003@gmail.com</span> and we will delete such information promptly.</p>
+    </div>
+
+    <div>
+      <h4 class="text-white font-semibold mb-2">10. Notification Reliability Disclaimer</h4>
+      <p class="uppercase text-xs leading-relaxed">The App may send push notifications, reminders, and alerts based on your inputs and preferences. However, the delivery of these notifications is dependent on numerous factors outside our control, including but not limited to your device settings, operating system behavior, battery optimization, network connectivity, and third-party push notification services. We do not guarantee that any notification will be delivered accurately, completely, or on time. You should not rely on the App as your sole means of receiving critical reminders, particularly those related to health, medication, medical appointments, safety, or other time-sensitive matters. We are not responsible for any consequences resulting from missed or delayed notifications.</p>
+    </div>
+
+    <div>
+      <h4 class="text-white font-semibold mb-2">11. California Residents (CCPA/CPRA)</h4>
+      <p>If you are a California resident, you have additional rights under the California Consumer Privacy Act and the California Privacy Rights Act, including the right to know what personal information we collect, the right to delete your personal information, the right to opt out of the sale or sharing of personal information (we do not sell your data), and the right to non-discrimination for exercising your rights. To exercise these rights, contact us at <span class="text-primary">karandalmia2003@gmail.com</span>.</p>
+    </div>
+
+    <div>
+      <h4 class="text-white font-semibold mb-2">12. International Users</h4>
+      <p>If you are located outside the United States, please be aware that your information will be transferred to and processed in the United States. By using the App, you consent to this transfer. We will take reasonable steps to ensure your data is treated securely and in accordance with this Privacy Policy.</p>
+    </div>
+
+    <div>
+      <h4 class="text-white font-semibold mb-2">13. Changes to This Privacy Policy</h4>
+      <p>We may update this Privacy Policy from time to time. We will notify you of material changes by posting the updated policy in the App and updating the "Effective Date." Your continued use of the App after the updated policy is posted constitutes your acceptance of the changes.</p>
+    </div>
+
+    <div>
+      <h4 class="text-white font-semibold mb-2">14. Contact Us</h4>
+      <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:</p>
+      <div class="mt-2 space-y-1">
+        <p>Email: <span class="text-primary">karandalmia2003@gmail.com</span></p>
+        <p>Website: <span class="text-primary">https://www.getsynoapp.com/</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
 <script>
         // --- Modal Management ---
