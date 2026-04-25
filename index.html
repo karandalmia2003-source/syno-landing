@@ -22,12 +22,12 @@
             colors: {
               "on-error-container": "#ffb2b9",
               "secondary-dim": "#b8956a",
-              "inverse-primary": "#16a34a",
+              "inverse-primary": "#c96a40",
               "on-secondary": "#1a0e05",
               "surface-dim": "#171210",
               "surface-container-highest": "#2a2420",
-              "primary-fixed": "#86efac",
-              "on-primary-container": "#052e16",
+              "primary-fixed": "#ffd5c2",
+              "on-primary-container": "#3d1505",
               "on-error": "#490013",
               "secondary-container": "#4a3520",
               "inverse-surface": "#f5f0ec",
@@ -35,27 +35,27 @@
               "surface": "#120e0b",
               "on-secondary-container": "#f5efe8",
               "secondary-fixed-dim": "#d4b896",
-              "primary": "#4ade80",
-              "on-primary-fixed-variant": "#052e16",
+              "primary": "#ffaa8a",
+              "on-primary-fixed-variant": "#3d1505",
               "tertiary-container": "#f8a010",
               "surface-container": "#1e1a16",
               "error-container": "#a70138",
               "surface-container-lowest": "#0a0806",
               "tertiary-dim": "#e79400",
               "secondary-fixed": "#e8d5b7",
-              "on-primary": "#052e16",
+              "on-primary": "#3d1505",
               "on-background": "#ffffff",
               "outline-variant": "#3d3830",
               "on-surface": "#ffffff",
               "on-tertiary": "#573500",
-              "primary-fixed-dim": "#4ade80",
-              "primary-container": "#14532d",
+              "primary-fixed-dim": "#ffaa8a",
+              "primary-container": "#5c2510",
               "inverse-on-surface": "#4a4540",
               "tertiary-fixed-dim": "#e79400",
               "on-tertiary-container": "#4a2c00",
               "tertiary": "#ffb148",
-              "on-primary-fixed": "#052e16",
-              "primary-dim": "#22c55e",
+              "on-primary-fixed": "#3d1505",
+              "primary-dim": "#f4845f",
               "error": "#ff6e84",
               "surface-variant": "#2a2420",
               "surface-container-high": "#241f1a",
@@ -63,7 +63,7 @@
               "on-tertiary-fixed": "#2a1700",
               "tertiary-fixed": "#f8a010",
               "on-secondary-fixed-variant": "#4a3520",
-              "surface-tint": "#4ade80",
+              "surface-tint": "#ffaa8a",
               "surface-bright": "#302820",
               "on-tertiary-fixed-variant": "#563400",
               "on-secondary-fixed": "#1a0e05",
@@ -115,7 +115,7 @@
             box-shadow: none;
         }
         .text-gradient-primary {
-            background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+            background: linear-gradient(135deg, #ffaa8a 0%, #f4845f 60%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -157,8 +157,8 @@
             overflow: hidden;
         }
         @keyframes orbPulse {
-            0%, 100% { box-shadow: 0 0 40px rgba(74,222,128,0.35), 0 0 80px rgba(74,222,128,0.1); }
-            50% { box-shadow: 0 0 70px rgba(74,222,128,0.65), 0 0 140px rgba(200,168,122,0.2); }
+            0%, 100% { box-shadow: 0 0 40px rgba(255,170,138,0.35), 0 0 80px rgba(255,170,138,0.1); }
+            50% { box-shadow: 0 0 70px rgba(255,170,138,0.65), 0 0 140px rgba(200,168,122,0.2); }
         }
         @keyframes dashFlow {
             to { stroke-dashoffset: -12; }
@@ -185,8 +185,8 @@
         }
         .sim-card:hover {
             transform: translateY(-6px) !important;
-            border-color: rgba(74,222,128,0.4);
-            box-shadow: 0 8px 32px rgba(74,222,128,0.15);
+            border-color: rgba(255,170,138,0.4);
+            box-shadow: 0 8px 32px rgba(255,170,138,0.15);
         }
 
         /* ── Start Anywhere Section ── */
@@ -224,9 +224,9 @@
         }
         /* pulse ring on the mic button */
         @keyframes ringPulse {
-            0%   { box-shadow: 0 0 0 0 rgba(74,222,128,0.5); }
-            70%  { box-shadow: 0 0 0 8px rgba(74,222,128,0); }
-            100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+            0%   { box-shadow: 0 0 0 0 rgba(255,170,138,0.5); }
+            70%  { box-shadow: 0 0 0 8px rgba(255,170,138,0); }
+            100% { box-shadow: 0 0 0 0 rgba(255,170,138,0); }
         }
         .mic-ring { animation: ringPulse 2s ease-out infinite; }
         /* connector line glow */
@@ -240,7 +240,7 @@
             top: 0; left: -100%;
             width: 60%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(74,222,128,0.7), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,170,138,0.7), transparent);
             animation: connectorShimmer 2.5s ease-in-out infinite;
         }
         @keyframes connectorShimmer {
@@ -293,13 +293,13 @@
 <!-- endpoints = center of each card based on CSS position + ~45px half card-height -->
 <svg class="radial-svg absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 900" preserveAspectRatio="none">
   <defs>
-    <linearGradient id="hl1" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="500" y2="72"><stop offset="0%" stop-color="#4ade80" stop-opacity="0.8"/><stop offset="100%" stop-color="#4ade80" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="hl1" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="500" y2="72"><stop offset="0%" stop-color="#ffaa8a" stop-opacity="0.8"/><stop offset="100%" stop-color="#ffaa8a" stop-opacity="0.2"/></linearGradient>
     <linearGradient id="hl2" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="856" y2="198"><stop offset="0%" stop-color="#c8a87a" stop-opacity="0.8"/><stop offset="100%" stop-color="#c8a87a" stop-opacity="0.2"/></linearGradient>
-    <linearGradient id="hl3" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="876" y2="450"><stop offset="0%" stop-color="#4ade80" stop-opacity="0.8"/><stop offset="100%" stop-color="#4ade80" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="hl3" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="876" y2="450"><stop offset="0%" stop-color="#ffaa8a" stop-opacity="0.8"/><stop offset="100%" stop-color="#ffaa8a" stop-opacity="0.2"/></linearGradient>
     <linearGradient id="hl4" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="856" y2="702"><stop offset="0%" stop-color="#c8a87a" stop-opacity="0.8"/><stop offset="100%" stop-color="#c8a87a" stop-opacity="0.2"/></linearGradient>
-    <linearGradient id="hl5" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="500" y2="820"><stop offset="0%" stop-color="#4ade80" stop-opacity="0.8"/><stop offset="100%" stop-color="#4ade80" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="hl5" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="500" y2="820"><stop offset="0%" stop-color="#ffaa8a" stop-opacity="0.8"/><stop offset="100%" stop-color="#ffaa8a" stop-opacity="0.2"/></linearGradient>
     <linearGradient id="hl6" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="144" y2="702"><stop offset="0%" stop-color="#c8a87a" stop-opacity="0.8"/><stop offset="100%" stop-color="#c8a87a" stop-opacity="0.2"/></linearGradient>
-    <linearGradient id="hl7" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="124" y2="450"><stop offset="0%" stop-color="#4ade80" stop-opacity="0.8"/><stop offset="100%" stop-color="#4ade80" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="hl7" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="124" y2="450"><stop offset="0%" stop-color="#ffaa8a" stop-opacity="0.8"/><stop offset="100%" stop-color="#ffaa8a" stop-opacity="0.2"/></linearGradient>
     <linearGradient id="hl8" gradientUnits="userSpaceOnUse" x1="500" y1="450" x2="144" y2="198"><stop offset="0%" stop-color="#c8a87a" stop-opacity="0.8"/><stop offset="100%" stop-color="#c8a87a" stop-opacity="0.2"/></linearGradient>
   </defs>
   <line x1="500" y1="450" x2="500" y2="72"  stroke="url(#hl1)" stroke-width="1.5" stroke-dasharray="5 6" class="dash-flow"/>
@@ -730,7 +730,7 @@
   Record Thought
 </button>
 </div>
-<div class="absolute -right-10 top-0 h-full w-1/2 opacity-30 group-hover:opacity-50 transition-opacity duration-[2000ms]" style="background: radial-gradient(ellipse at 60% 50%, rgba(200,168,122,0.4) 0%, rgba(74,222,128,0.2) 40%, transparent 70%); filter: blur(40px);"></div>
+<div class="absolute -right-10 top-0 h-full w-1/2 opacity-30 group-hover:opacity-50 transition-opacity duration-[2000ms]" style="background: radial-gradient(ellipse at 60% 50%, rgba(200,168,122,0.4) 0%, rgba(255,170,138,0.2) 40%, transparent 70%); filter: blur(40px);"></div>
 </div>
 </div>
 </section>
